@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import Moment from 'react-moment'
+import { format as formatDate } from 'date-fns'
 import Nav from './components/nav'
 import './App.css';
 
 class App extends Component {
+  NiceDate = ({ date, format='Do MMMM YYYY' }) => {
+    return formatDate(date, format)
+  }
+  
   render() {
     console.log('schedule[0].date', schedule[0].date)
     return (
@@ -25,7 +29,7 @@ class App extends Component {
                 <div className="GameDetail">
                 <div className="GameDetail_date">
                   <div className="month">
-                  {new DATE(game.date).getMonth()}
+                  {this.NiceDate(game.date)}
                   </div>
                   <div className="day">
                   {new Intl.NumberFormat("en-US", {                    
