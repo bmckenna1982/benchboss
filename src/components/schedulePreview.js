@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import GameDetail from './gameDetail'
+import GamePreview from './gamePreview'
 
 
 class SchedulePreview extends Component {
@@ -15,11 +15,8 @@ class SchedulePreview extends Component {
     return (
       <div className="SchedulePreview">
         {schedule.slice(0, 3).map((game, index) => (
-          <GameDetail key={index} game={game} />
-        ))}
-        {/* {schedule.map((game, index) => (
-              <GameDetail key={index} game={game} />
-            ))} */}
+          <GamePreview key={index} game={game} />
+        ))}        
       </div>
     )
   }
