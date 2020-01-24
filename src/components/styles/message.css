@@ -1,0 +1,16 @@
+.Message_container {
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+.Message {
+  font-size: 16px;
+  text-align: left;
+}
+
+.Message_author, .Message_date {
+  font-size: 14px;
+  text-align: right;
+}

@@ -1,0 +1,23 @@
+.GameDetail {
+  border: 1px solid #333333;
+  border-radius: 5px;
+  display: flex; 
+  padding: 5px; 
+}
+
+.GameDetail_date {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.GameDetail_info {
+  margin: 0 auto;
+}
+
+.GameDetail_time, .GameDetail_location {
+  display: inline-block;
+  font-size: 14px;
+  padding: 0 5px;
+}

@@ -1,0 +1,17 @@
+.Comment_container {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #ffffff;
+  margin: 5px 0;
+}
+
+.Comment {
+  font-size: 16px;
+  text-align: left;
+}
+
+.Comment_author, .Comment_date {
+  font-size: 14px;
+  text-align: right;
+}

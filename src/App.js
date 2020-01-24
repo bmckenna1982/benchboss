@@ -1,41 +1,55 @@
 import React, { Component } from 'react';
-import { format as formatDate } from 'date-fns'
+import { format as formatDate, parseISO } from 'date-fns'
+import { Route, withRouter } from 'react-router-dom'
 import Nav from './components/nav'
 import './App.css';
+import SchedulePreview from './components/schedulePreview';
+import Message from './components/message';
+import Comment from './components/comment';
 
 class App extends Component {
-  NiceDate = ({ date, format='Do MMMM YYYY' }) => {
-    return formatDate(date, format)
+  NiceMonth({ date, format = 'MMMM' }) {
+    const parseDate = parseISO(date)
+    console.log('parseDate', formatDate(parseDate, format))
+    return formatDate(parseDate, format)
   }
-  
+
+  NiceDay({ date, format = 'Do' }) {
+    const parseDate = parseISO(date)
+    console.log('parseDate', formatDate(parseDate, format))
+    return formatDate(parseDate, format)
+  }
+
   render() {
-    console.log('schedule[0].date', schedule[0].date)
     return (
-      <div className="App" >        
-          {/* <nav role="navigation">
+      <div className="App" >
+        {/* <nav role="navigation">
             <div>Home</div>
             <div className="app_name">Bench Boss</div>
             <div>Login</div>
           </nav> */}
-          <Nav />
-          <main role="main">
-            <header role="banner">
-              <h1>Bench Boss</h1>
-              <h2>Manage like a pro</h2>
-            </header>
-            <section className="schedule">
+        <Nav />
+        <main role="main">
+          <header role="banner">
+            <h1>Guinness Hockey</h1>            
+          </header>
+          <section className="schedule">
+            <h2>Upcoming Games</h2>
+            {/* {schedule.map((game, index) => (
+              <GameDetail key={index} game={game} />
+            ))} */}
+            <SchedulePreview />
+          </section>
+          {/* <section className="schedule">
               <h2>Schedule</h2>
-              {schedule.map(game => (                
-                <div className="GameDetail">
+              {schedule.map((game, index) => (                
+                <div key={index} className="GameDetail">
                 <div className="GameDetail_date">
                   <div className="month">
-                  {this.NiceDate(game.date)}
+                  {this.NiceMonth(game)}
                   </div>
                   <div className="day">
-                  {new Intl.NumberFormat("en-US", {                    
-                    day: "2-digit",                    
-                  }).format(game.date)
-                  }
+                  {this.NiceDay(game)}
                   </div>
                 </div>
                 <div className="GameDetail_time">
@@ -50,34 +64,33 @@ class App extends Component {
               </div>
               ))}
               
-            </section>
-            <section className="game-details_descsription">
-              <header>
-                <h3>Get full game details</h3>
-              </header>
-              <p>[<em>placeholder for screenshot of game details</em>]</p>
-              <p>See full game details for time, date and location of upcoming games as well as stats from previous games
-              </p>
-            </section>
-            <section className="message-board_description">
-              <header>
-                <h3>Keep in contact with all team mates</h3>
-              </header>
-              <p>[<em>placeholder for screenshot of message board</em>]</p>
-              <p>Integrated message board allows users and admins to create messages and keep the conversation going</p>
-            </section>
-          </main>
-          <footer role="content-info">Footer</footer>        
+            </section> */}
+          <section className="message-board">
+            <h2>Message Board</h2>
+            <div className="latest-message">
+              <h3>Latest message board activity</h3>
+              {/* <div>
+                <ul>
+                  <li>Contents of latest message</li>
+                  <li>Author</li>
+                  <li>Date posted</li>
+                </ul>
+                <ul>
+                  <li>Contents of latest comment on latest message</li>
+                  <li>Author</li>
+                  <li>Date posted</li>
+                </ul>
+              </div> */}
+              <Message />
+              <Comment />
+            </div>
+          </section>          
+        </main>
+        <footer role="content-info">Footer</footer>
       </div>
     )
   }
 }
 
-const schedule = [
-  { date: "2020-01-23T00:00:00.00Z", time: "10:10 PM", location: "Center Ice Arena", opponent: "Cossacks" },
-  { date: "2020-01-29T00:00:00.00Z", time: "10:10 PM", location: "Center Ice Arena", opponent: "VS" },
-  { date: "2020-02-06T00:00:00.00Z", time: "9:10 PM", location: "The Ice", opponent: "Hitmen" },
 
-]
-
-export default App;
+export default withRouter(App);
