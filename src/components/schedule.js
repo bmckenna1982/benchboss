@@ -25,7 +25,7 @@ class Schedule extends Component {
           <span className='chevrons_right'>&#187;</span>
         </div> */}
         <div className='Schedule_list'>
-        {/* {this.filterGames("January")} */}
+        {/* {this.filterGames('January')} */}
         {GAMES.schedule.map((game, index) => (
           <GamePreview key={index} game={game} />
         ))}        
