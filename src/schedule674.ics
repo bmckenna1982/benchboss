@@ -1,0 +1,184 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Gremlins at Guinness
+LOCATION:The Cooler (Red)
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGremlins at Guinness at The Cooler (Red)=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20191208T203000Z
+DALARM:20191208T190000Z
+DTEND:20191208T220000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Clyde at Guinness
+LOCATION:Sandy Springs
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AClyde at Guinness at Sandy Springs=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20191220T013000Z
+DALARM:20191220T000000Z
+DTEND:20191220T030000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Redwings
+LOCATION:The Cooler (Red)
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Redwings at The Cooler (Red)=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200113T014500Z
+DALARM:20200113T001500Z
+DTEND:20200113T031500Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Average Joes
+LOCATION:The Cooler (Red)
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Average Joes at The Cooler (Red)=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200120T014500Z
+DALARM:20200120T001500Z
+DTEND:20200120T031500Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Cossacks
+LOCATION:Sandy Springs
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Cossacks at Sandy Springs=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200124T031000Z
+DALARM:20200124T014000Z
+DTEND:20200124T044000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Victorious Secret at Guinness
+LOCATION:Sandy Springs
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AVictorious Secret at Guinness at Sandy Springs=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200130T031000Z
+DALARM:20200130T014000Z
+DTEND:20200130T044000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Hitmen
+LOCATION:IceComplex
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Hitmen at IceComplex=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200207T021000Z
+DALARM:20200207T004000Z
+DTEND:20200207T034000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Gremlins
+LOCATION:Sandy Springs
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Gremlins at Sandy Springs=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200213T013000Z
+DALARM:20200213T000000Z
+DTEND:20200213T030000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Clyde
+LOCATION:The Cooler (Red)
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Clyde at The Cooler (Red)=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200223T203000Z
+DALARM:20200223T190000Z
+DTEND:20200223T220000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Redwings at Guinness
+LOCATION:IceComplex
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0ARedwings at Guinness at IceComplex=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200302T000000Z
+DALARM:20200301T223000Z
+DTEND:20200302T013000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Average Joes at Guinness
+LOCATION:IceComplex
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AAverage Joes at Guinness at IceComplex=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200306T013000Z
+DALARM:20200306T000000Z
+DTEND:20200306T030000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Cossacks at Guinness
+LOCATION:IceComplex
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0ACossacks at Guinness at IceComplex=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200315T194000Z
+DALARM:20200315T181000Z
+DTEND:20200315T211000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Victorious Secret
+LOCATION:The Cooler (Red)
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Victorious Secret at The Cooler (Red)=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200322T230000Z
+DALARM:20200322T213000Z
+DTEND:20200323T003000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Hitmen at Guinness
+LOCATION:Sandy Springs
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AHitmen at Guinness at Sandy Springs=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200328T225000Z
+DALARM:20200328T212000Z
+DTEND:20200329T002000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Gremlins
+LOCATION:IceComplex
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Gremlins at IceComplex=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200405T212000Z
+DALARM:20200405T195000Z
+DTEND:20200405T225000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Clyde
+LOCATION:Sandy Springs
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Clyde at Sandy Springs=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200410T003000Z
+DALARM:20200409T230000Z
+DTEND:20200410T020000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Redwings at Guinness
+LOCATION:Sandy Springs
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0ARedwings at Guinness at Sandy Springs=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200419T230000Z
+DALARM:20200419T213000Z
+DTEND:20200420T003000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Average Joes at Guinness
+LOCATION:IceComplex
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AAverage Joes at Guinness at IceComplex=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200427T004000Z
+DALARM:20200426T231000Z
+DTEND:20200427T021000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Cossacks at Guinness
+LOCATION:The Cooler (Red)
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0ACossacks at Guinness at The Cooler (Red)=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200502T193000Z
+DALARM:20200502T180000Z
+DTEND:20200502T210000Z
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES: SPORTS
+SUMMARY:Guinness at Victorious Secret
+LOCATION:IceComplex
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:Atlanta Amateur Hockey League=0D=0AOpen Winter 2019 AA1 (Elite AA) (Hockey) game=0D=0AGuinness at Victorious Secret at IceComplex=0D=0A =0D=0Athis appointment exported from Sportability on 1/26/2020
+DTSTART:20200509T212000Z
+DALARM:20200509T195000Z
+DTEND:20200509T225000Z
+END:VEVENT
+
+END:VCALENDAR
