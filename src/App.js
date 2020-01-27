@@ -39,7 +39,7 @@ class App extends Component {
             <Route exact path="/message-board/:messageId" component={Message} />
           </Switch>          
         </main>
-        <footer role="content-info">Footer</footer>
+        <footer role="content-info">&copy; BENCHBOSS 2020</footer>
       </div>
     )
   }
