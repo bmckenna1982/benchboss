@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { format as formatDate, parseISO } from 'date-fns'
 import { Route, withRouter, Switch } from 'react-router-dom'
 import Nav from './components/nav'
 import './App.css'

@@ -35,11 +35,13 @@ class HomePage extends Component {
           <SchedulePreview />
         </section>
         <section className='message-board'>
-          <h2>Message Board</h2>
-          <div className='latest-message'>
-            <h3>Latest message board activity</h3>
-            <MessagePreview message={this.findLastMessage()}/>
-            <Comment />
+          <h2>Latest Message Activity</h2>
+          <NavLink className='schedule_link' to={'/message-board'}>
+            View Message Bosrd
+          </NavLink> 
+          <div className='latest-message'>            
+            <MessagePreview message={Board.messages[2]}/>
+            <Comment comment={CommentList.comments[3]}/>
           </div>
         </section>
       </div>

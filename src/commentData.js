@@ -21,5 +21,12 @@ export default {
       "postedDate": "20200110T203000Z",
       "messageId": 2,
     },
+    {
+      "id": 4,
+      "content": "comment 4 content",
+      "author": "comment 4 author",
+      "postedDate": "20200111T203000Z",
+      "messageId": 3,
+    },
   ]
 }
