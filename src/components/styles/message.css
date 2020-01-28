@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.Message_title {
+.Message_content {
   font-size: 16px;
   text-align: left;
 }
@@ -14,17 +14,4 @@
 .Message_author, .Message_date {
   font-size: 14px;
   text-align: right;
-}
-
-.comment_icon {
-  /* display: inline; */
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  vertical-align: middle;
-  border: 1px solid black;
-  border-radius: 50%;
-  top: 5px;
-  right: 5px;  
 }

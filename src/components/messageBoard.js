@@ -8,6 +8,7 @@ class MessageBoard extends Component {
     console.log('Board.messages', Board.messages)
     return(
       <section className="MessageBoard">
+        <h2>Message Board</h2>
         {Board.messages.map((message, index) => (
           <MessagePreview key={index} message={message} />         
         ))}

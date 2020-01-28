@@ -14,11 +14,13 @@ class SchedulePreview extends Component {
     // ]
 console.log('GAMES', GAMES)
     return (
-      <div className='SchedulePreview'>
+      <ul className='SchedulePreview'>
         {GAMES.schedule.slice(0, 3).map((game, index) => (
-          <GamePreview key={index} game={game} />
+          <li key={game.id}>
+            <GamePreview game={game} />
+          </li>
         ))}        
-      </div>
+      </ul>
     )
   }
 }

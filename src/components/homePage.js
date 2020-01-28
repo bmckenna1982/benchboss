@@ -7,6 +7,7 @@ import Comment from './comment'
 import Board from '../messageData'
 import CommentList from '../commentData'
 
+
 class HomePage extends Component {
   findLastMessage() {    
     var mostRecentDate = Math.max.apply(null, Board.messages.map( e => {
@@ -31,13 +32,14 @@ class HomePage extends Component {
           <h2>Upcoming Games</h2>
           <NavLink className='schedule_link' to={'/schedule'}>
             View Complete Schedule
-          </NavLink>           
+          </NavLink>
+
           <SchedulePreview />
         </section>
         <section className='message-board'>
           <h2>Latest Message Activity</h2>
           <NavLink className='schedule_link' to={'/message-board'}>
-            View Message Bosrd
+            View Message Board
           </NavLink> 
           <div className='latest-message'>            
             <MessagePreview message={Board.messages[2]}/>

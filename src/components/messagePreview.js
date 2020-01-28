@@ -1,19 +1,26 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import CommentList from '../commentData'
-import './styles/message.css'
+import './styles/messagePreview.css'
+
 
 class MessagePreview extends Component {
+  handleClick = (e) => {
+    console.log('e.target', e.target)
+  }
+
   render() {
-    console.log('this.props', this.props)
     const commentCount = CommentList.comments.filter(comment => comment.messageId === this.props.message.id).length
-    console.log('commentCount', commentCount)
-    return(
-      <div className='Message_container'>
-        <div className='Message_title'>{this.props.message.title}</div>
-        <div className='Message_author'>{this.props.message.author}</div>
-        <div className='Message_date'>{this.props.message.postedDate}</div>
+
+    return (
+      <div className='MessagePreview_container'>
+        <Link to={`/message-board/${this.props.message.id}`}>
+          <div className='MessagePreview_title'>{this.props.message.title}</div>
+          <div className='MessagePreview_author'>{this.props.message.author}</div>
+          <div className='MessagePreview_date'>{this.props.message.postedDate}</div>          
+        </Link>
         <div className='comment_icon'>
-          {commentCount}
+            {commentCount}
         </div>
       </div>
     )

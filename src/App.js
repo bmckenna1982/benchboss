@@ -3,7 +3,7 @@ import { Route, withRouter, Switch } from 'react-router-dom'
 import Nav from './components/nav'
 import './App.css'
 import HomePage from './components/homePage'
-import Message from './components/messagePreview'
+import Message from './components/message'
 import Login from './components/login'
 import Register from './components/register'
 import MessageBoard from './components/messageBoard'
@@ -28,7 +28,8 @@ class App extends Component {
             <Route exact path='/message-board' component={MessageBoard} />
             <Route exact path='/schedule/:gameId' component={GameDetail} />
             <Route exact path='/message-board/:messageId' component={Message} />
-          </Switch>          
+          </Switch>
+            <Route exact path='/message-board/:messageId' component={Comment} />          
         </main>
         <footer role='content-info'>&copy; BENCHBOSS 2020</footer>
       </div>
