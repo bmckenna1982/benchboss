@@ -15,7 +15,7 @@ main {
 nav,
 footer {
   padding: 1% 0;
-  background-color: #aaa;
+  background-color: #01A263;
 }
 
 nav {
@@ -42,12 +42,13 @@ h2 {
 section {
   min-height: 200px;
   padding: 30px 15px;
-  background-color: #bbb;
+  background-color: #eee;
+  border-top: 2px solid #dedede;
 }
 
-section:nth-child(even) {
+/* section:nth-child(even) {
   background-color: #ddd;
-}
+} */
 
 p {
   margin: 0 auto;
