@@ -1,0 +1,163 @@
+{
+  "SCHEDULE": [
+		{
+          
+          "SUMMARY": "Gremlins at Guinness",
+          "LOCATION": "The Cooler (Red)",
+          "DTSTART": "20191208T203000Z",
+          "DALARM": "20191208T190000Z",
+          "DTEND": "20191208T220000Z"
+        },
+        {
+          
+          "SUMMARY": "Clyde at Guinness",
+          "LOCATION": "Sandy Springs",
+          "DTSTART": "20191220T013000Z",
+          "DALARM": "20191220T000000Z",
+          "DTEND": "20191220T030000Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Redwings",
+          "LOCATION": "The Cooler (Red)",
+          "DTSTART": "20200113T014500Z",
+          "DALARM": "20200113T001500Z",
+          "DTEND": "20200113T031500Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Average Joes",
+          "LOCATION": "The Cooler (Red)",
+          "DTSTART": "20200120T014500Z",
+          "DALARM": "20200120T001500Z",
+          "DTEND": "20200120T031500Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Cossacks",
+          "LOCATION": "Sandy Springs",
+          "DTSTART": "20200124T031000Z",
+          "DALARM": "20200124T014000Z",
+          "DTEND": "20200124T044000Z"
+        },
+        {
+          
+          "SUMMARY": "Victorious Secret at Guinness",
+          "LOCATION": "Sandy Springs",
+          "DTSTART": "20200130T031000Z",
+          "DALARM": "20200130T014000Z",
+          "DTEND": "20200130T044000Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Hitmen",
+          "LOCATION": "IceComplex",
+          "DTSTART": "20200207T021000Z",
+          "DALARM": "20200207T004000Z",
+          "DTEND": "20200207T034000Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Gremlins",
+          "LOCATION": "Sandy Springs",
+          "DTSTART": "20200213T013000Z",
+          "DALARM": "20200213T000000Z",
+          "DTEND": "20200213T030000Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Clyde",
+          "LOCATION": "The Cooler (Red)",
+          "DTSTART": "20200223T203000Z",
+          "DALARM": "20200223T190000Z",
+          "DTEND": "20200223T220000Z"
+        },
+        {
+          
+          "SUMMARY": "Redwings at Guinness",
+          "LOCATION": "IceComplex",
+          "DTSTART": "20200302T000000Z",
+          "DALARM": "20200301T223000Z",
+          "DTEND": "20200302T013000Z"
+        },
+        {
+          
+          "SUMMARY": "Average Joes at Guinness",
+          "LOCATION": "IceComplex",
+          "DTSTART": "20200306T013000Z",
+          "DALARM": "20200306T000000Z",
+          "DTEND": "20200306T030000Z"
+        },
+        {
+          
+          "SUMMARY": "Cossacks at Guinness",
+          "LOCATION": "IceComplex",
+          "DTSTART": "20200315T194000Z",
+          "DALARM": "20200315T181000Z",
+          "DTEND": "20200315T211000Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Victorious Secret",
+          "LOCATION": "The Cooler (Red)",
+          "DTSTART": "20200322T230000Z",
+          "DALARM": "20200322T213000Z",
+          "DTEND": "20200323T003000Z"
+        },
+        {
+          
+          "SUMMARY": "Hitmen at Guinness",
+          "LOCATION": "Sandy Springs",
+          "DTSTART": "20200328T225000Z",
+          "DALARM": "20200328T212000Z",
+          "DTEND": "20200329T002000Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Gremlins",
+          "LOCATION": "IceComplex",
+          "DTSTART": "20200405T212000Z",
+          "DALARM": "20200405T195000Z",
+          "DTEND": "20200405T225000Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Clyde",
+          "LOCATION": "Sandy Springs",
+          "DTSTART": "20200410T003000Z",
+          "DALARM": "20200409T230000Z",
+          "DTEND": "20200410T020000Z"
+        },
+        {
+          
+          "SUMMARY": "Redwings at Guinness",
+          "LOCATION": "Sandy Springs",
+          "DTSTART": "20200419T230000Z",
+          "DALARM": "20200419T213000Z",
+          "DTEND": "20200420T003000Z"
+        },
+        {
+          
+          "SUMMARY": "Average Joes at Guinness",
+          "LOCATION": "IceComplex",
+          "DTSTART": "20200427T004000Z",
+          "DALARM": "20200426T231000Z",
+          "DTEND": "20200427T021000Z"
+        },
+        {
+          
+          "SUMMARY": "Cossacks at Guinness",
+          "LOCATION": "The Cooler (Red)",
+          "DTSTART": "20200502T193000Z",
+          "DALARM": "20200502T180000Z",
+          "DTEND": "20200502T210000Z"
+        },
+        {
+          
+          "SUMMARY": "Guinness at Victorious Secret",
+          "LOCATION": "IceComplex",
+          "DTSTART": "20200509T212000Z",
+          "DALARM": "20200509T195000Z",
+          "DTEND": "20200509T225000Z"
+        }
+    ]    

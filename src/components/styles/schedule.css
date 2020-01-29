@@ -1,0 +1,16 @@
+.Schedule_header {
+  font-size: 22px;
+}
+.chevrons_right, .chevrons_left {
+  font-size: 26px;
+  color: #333;
+  margin: auto;
+  padding: 0 6px;  
+}
+
+.chevrons_right:hover, .chevrons_left:hover {
+cursor: pointer;
+}
+/* .chevrons_right:before {
+  content: "\f105"
+} */
