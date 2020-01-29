@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import GamePreview from './gamePreview'
-import GAMES from '../scheduleData'
+import ScheduleList from '../scheduleData'
 import './styles/schedule.css'
 
 class Schedule extends Component {
@@ -26,7 +26,7 @@ class Schedule extends Component {
         </div> */}
         <div className='Schedule_list'>
         {/* {this.filterGames('January')} */}
-        {GAMES.schedule.map((game, index) => (
+        {ScheduleList.games.map((game, index) => (
           <GamePreview key={index} game={game} />
         ))}        
       </div>

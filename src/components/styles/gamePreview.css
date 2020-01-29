@@ -1,9 +1,9 @@
-.GamePreview {
-  border: 1px solid #333333;
+.GamePreview_container {
+  border: 1px solid #333;
   border-radius: 5px;
-  display: flex; 
-  padding: 5px; 
-}
+  background-color: #ffffff;
+  padding: 5px;
+} 
 
 .GamePreview_date {
   font-size: 14px;
@@ -20,4 +20,33 @@
   display: inline-block;
   font-size: 14px;
   padding: 0 5px;
+}
+
+.GamePreview_container a {
+display: flex;
+width: 100%;
+text-decoration: none;
+color: #333;
+}
+
+.MessagePreview_container {
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 5px;
+  position: relative;
+}
+
+/* .latest-message a{
+  border: 1px solid #333;
+} */
+
+.MessagePreview_title {
+  font-size: 16px;
+  text-align: left;
+}
+
+.MessagePreview_author, .MessagePreview_date {
+  font-size: 14px;
+  text-align: right;
 }

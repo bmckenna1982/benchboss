@@ -5,10 +5,7 @@ import './styles/messagePreview.css'
 
 
 class MessagePreview extends Component {
-  handleClick = (e) => {
-    console.log('e.target', e.target)
-  }
-
+  
   render() {
     const commentCount = CommentList.comments.filter(comment => comment.messageId === this.props.message.id).length
 

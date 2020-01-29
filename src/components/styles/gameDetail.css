@@ -1,0 +1,10 @@
+.RSVP {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.RSVP div {
+  flex: 1;
+  border: 1px solid #333;
+}
+

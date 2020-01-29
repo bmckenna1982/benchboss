@@ -9,6 +9,8 @@ import Register from './components/register'
 import MessageBoard from './components/messageBoard'
 import Schedule from './components/schedule'
 import GameDetail from './components/gameDetail'
+import AddComment from './components/addComment'
+
 
 
 class App extends Component {
@@ -28,8 +30,9 @@ class App extends Component {
             <Route exact path='/message-board' component={MessageBoard} />
             <Route exact path='/schedule/:gameId' component={GameDetail} />
             <Route exact path='/message-board/:messageId' component={Message} />
-          </Switch>
-            <Route exact path='/message-board/:messageId' component={Comment} />          
+            <Route exact path='/add-comment' component={AddComment} />
+            {/* <Route exact path='/addMessage' component={AddMessage} /> */}
+          </Switch>            
         </main>
         <footer role='content-info'>&copy; BENCHBOSS 2020</footer>
       </div>

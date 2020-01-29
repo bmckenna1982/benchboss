@@ -1,5 +1,5 @@
 export default {
-    "schedule": [
+    "games": [
       {
             "id": 1,
             "summary": "Gremlins at Guinness",

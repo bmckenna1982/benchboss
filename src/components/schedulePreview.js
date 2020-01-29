@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import GamePreview from './gamePreview'
-import GAMES from '../scheduleData'
+import Schedule from '../scheduleData'
+import './styles/gamePreview.css'
 
 
 class SchedulePreview extends Component {
@@ -12,10 +13,10 @@ class SchedulePreview extends Component {
     //   { date: '2020-02-06T11:00:00.00Z', time: '9:10 PM', location: 'The Ice', opponent: 'Hitmen' },
 
     // ]
-console.log('GAMES', GAMES)
+console.log('Schedule', Schedule)
     return (
       <ul className='SchedulePreview'>
-        {GAMES.schedule.slice(0, 3).map((game, index) => (
+        {Schedule.games.slice(0, 3).map((game, index) => (
           <li key={game.id}>
             <GamePreview game={game} />
           </li>

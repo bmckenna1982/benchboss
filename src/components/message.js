@@ -18,6 +18,7 @@ class Message extends Component {
         {/* <div>
           {Board.messages[this.props.match.params.messageId - 1]}
         </div> */}
+        <button className='addComment'>Add Comment</button>
         <div>
           {messageComments.map((comment, index) =>
             <Comment key={index} comment={comment} />)}
