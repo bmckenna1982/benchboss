@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, withRouter, Switch } from 'react-router-dom'
 import Nav from './components/nav'
 import './App.css'
+import Hero from './components/hero'
 import HomePage from './components/homePage'
 import Message from './components/message'
 import Login from './components/login'
@@ -10,7 +11,7 @@ import MessageBoard from './components/messageBoard'
 import Schedule from './components/schedule'
 import GameDetail from './components/gameDetail'
 import AddComment from './components/addComment'
-
+import AddGame from './components/addGame'
 
 
 class App extends Component {
@@ -19,9 +20,7 @@ class App extends Component {
       <div className='App' >
         <Nav />
         <main role='main'>
-          <header role='banner'>
-            <h1>Guinness Hockey</h1>
-          </header>
+          <Hero />          
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/log-in' component={Login} />
@@ -30,7 +29,8 @@ class App extends Component {
             <Route exact path='/message-board' component={MessageBoard} />
             <Route exact path='/schedule/:gameId' component={GameDetail} />
             <Route exact path='/message-board/:messageId' component={Message} />
-            <Route exact path='/add-comment' component={AddComment} />
+            <Route exact path='/add-comment' component={AddComment} />            
+            <Route exact path='/add-game' component={AddGame} />            
             {/* <Route exact path='/addMessage' component={AddMessage} /> */}
           </Switch>            
         </main>

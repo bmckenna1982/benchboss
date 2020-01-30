@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NiceMonth, NiceDay, NiceTime } from './utils'
 import Schedule from '../scheduleData'
+import RSVP from './rsvp'
 import './styles/gameDetail.css'
 
 class GameDetail extends Component {
@@ -45,7 +46,8 @@ class GameDetail extends Component {
           <div className='GamePreview_location'>
             {selectedGame.location}
           </div>
-          <div className='RSVP'>
+          <RSVP game={selectedGame}/>
+          {/* <div className='RSVP'>
             <h3>Please set your RSVP</h3>
             <div className='button_container'>
               <button className='RSVP_button reply_in'>In</button>
@@ -92,7 +94,7 @@ class GameDetail extends Component {
                 <li>Stephen Patch</li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>        
       </section >
     )
