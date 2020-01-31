@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Board from '../messageData'
-import CommentsList from '../commentData'
+import Board from '../../messageData'
+import CommentsList from '../../commentData'
 import Comment from './comment'
 import './styles/message.css'
 

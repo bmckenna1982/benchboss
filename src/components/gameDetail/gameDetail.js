@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { NiceMonth, NiceDay, NiceTime } from './utils'
-import Schedule from '../scheduleData'
-import RSVP from './rsvp'
+import { NiceMonth, NiceDay, NiceTime } from '../../utils/utils'
+import Schedule from '../../scheduleData'
+import RSVP from '../rsvp/rsvp'
 import './styles/gameDetail.css'
 
 class GameDetail extends Component {

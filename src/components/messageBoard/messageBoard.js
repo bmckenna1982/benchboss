@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import MessagePreview from './messagePreview'
-import Board from '../messageData'
+import MessagePreview from '../messagePreview/messagePreview'
+import Board from '../../messageData'
 
 
 class MessageBoard extends Component {
   render() {
-    console.log('Board.messages', Board.messages)
+    
     return(
       <section className="MessageBoard">
         <h2>Message Board</h2>

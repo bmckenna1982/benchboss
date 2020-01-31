@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import SchedulePreview from './schedulePreview'
-import MessagePreview from './messagePreview'
+import SchedulePreview from '../schedulePreview'
+import MessagePreview from '../messagePreview/messagePreview'
 import Comment from './comment'
-import Board from '../messageData'
-import CommentList from '../commentData'
+import Board from '../../messageData'
+import CommentList from '../../commentData'
 
 
 class HomePage extends Component {
