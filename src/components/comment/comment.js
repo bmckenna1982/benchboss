@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { format as formatDate, parseISO } from 'date-fns'
 import { NiceDate } from '../../utils/utils'
-import './styles/comment.css'
+import './comment.css'
 
 class Comment extends Component {
   render() {

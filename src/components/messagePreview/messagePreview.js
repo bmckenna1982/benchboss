@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CommentList from '../../commentData'
 import { NiceDate } from '../../utils/utils'
-import './styles/messagePreview.css'
+import './messagePreview.css'
 
 
 class MessagePreview extends Component {

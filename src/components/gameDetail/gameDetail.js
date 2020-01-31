@@ -2,28 +2,9 @@ import React, { Component } from 'react'
 import { NiceMonth, NiceDay, NiceTime } from '../../utils/utils'
 import Schedule from '../../scheduleData'
 import RSVP from '../rsvp/rsvp'
-import './styles/gameDetail.css'
+import './gameDetail.css'
 
 class GameDetail extends Component {
-
-  // NiceMonth({ time, format = 'MMM' }) {
-  //   const parseDate = parseISO(time)
-  //   console.log('Month', formatDate(parseDate, format))
-  //   return formatDate(parseDate, format)
-  // }
-
-  // NiceDay({ time, format = 'do' }) {
-  //   const parseDate = parseISO(time)
-  //   console.log('Day', formatDate(parseDate, format))
-  //   return formatDate(parseDate, format)
-  // }
-
-  // NiceTime({ time, format = 'h:mm a' }) {
-  //   console.log('time', time)
-  //   const parseDate = parseISO(time)
-  //   console.log('Time', formatDate(parseDate, format))
-  //   return formatDate(parseDate, format)
-  // }
 
   render() {
     const selectedGame = Schedule.games[this.props.match.params.gameId]

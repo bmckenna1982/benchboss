@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Board from '../../messageData'
 import CommentsList from '../../commentData'
-import Comment from './comment'
-import './styles/message.css'
+import Comment from '../comment/comment'
+import './message.css'
 
 class Message extends Component {
   render() {    

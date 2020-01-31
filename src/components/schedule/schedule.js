@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import GamePreview from './gamePreview'
+import GamePreview from '../gamePreview/gamePreview'
 import ScheduleList from '../../scheduleData'
-import './styles/schedule.css'
+import './schedule.css'
 
 class Schedule extends Component {
   filterGames = (month) => {

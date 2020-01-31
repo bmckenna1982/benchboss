@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { NiceMonth, NiceDay, NiceTime } from '../../utils/utils'
 import { Link } from 'react-router-dom'
-import './styles/gamePreview.css'
+import { NiceMonth, NiceDay, NiceTime } from '../../utils/utils'
+import './gamePreview.css'
 
 class GamePreview extends Component {
   

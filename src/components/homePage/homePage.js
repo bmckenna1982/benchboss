@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import SchedulePreview from '../schedulePreview'
+import SchedulePreview from '../schedulePreview/schedulePreview'
 import MessagePreview from '../messagePreview/messagePreview'
-import Comment from './comment'
+import Comment from '../comment/comment'
 import Board from '../../messageData'
 import CommentList from '../../commentData'
 
