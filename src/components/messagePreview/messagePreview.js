@@ -14,13 +14,14 @@ class MessagePreview extends Component {
       <div className='MessagePreview_container'>
         <Link to={`/message-board/${this.props.message.id}`}>
           <div className='MessagePreview_title'>{this.props.message.title}</div>
-          <div className='MessagePreview_author'>{this.props.message.author}</div>
+          <div className='MessagePreview_author'>{this.props.message.author.full_name}</div>
           <div className='MessagePreview_date'>
-            <NiceDate date={this.props.message.postedDate} />
+            <NiceDate date={this.props.message.posted_date} />
           </div>          
         </Link>
         <div className='comment_icon'>
-            {commentCount}
+            {/* {commentCount} */}
+            {this.props.message.number_of_comments}
         </div>
       </div>
     )
