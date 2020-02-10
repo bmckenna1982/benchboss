@@ -1,7 +1,6 @@
 import { format as formatDate, parseISO } from 'date-fns'
 
 export function NiceDate({ date, format = 'MMMM do yyyy h:mm a' }) {
-  console.log('date', date)
   const parseDate = parseISO(date)
   return formatDate(parseDate, format)
 }

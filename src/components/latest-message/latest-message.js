@@ -30,9 +30,9 @@ class LatestMessage extends Component {
           comment: {
             id: data.comment.id,
             content: data.comment.content,
-            posted_date: data.comment.posted_date
+            posted_date: data.comment.posted_date,
+            author: data.comment.author.full_name
           },
-          comm_author: data.comment.author
         })
       })
       .catch(err => {

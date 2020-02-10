@@ -34,7 +34,7 @@ class App extends Component {
             {/* <Route exact path='/addMessage' component={AddMessage} /> */}
           </Switch>            
         </main>
-        <footer role='content-info'>&copy; BENCHBOSS 2020</footer>
+        <footer>&copy; BENCHBOSS 2020</footer>
       </div>
     )
   }
