@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MessagePreview from '../messagePreview/messagePreview'
 import MessageService from '../services/message-service'
-import Board from '../../messageData'
+// import Board from '../../messageData'
 
 
 class MessageBoard extends Component {
@@ -17,7 +17,7 @@ class MessageBoard extends Component {
     MessageService.getMessageBoard()
     .then(data => {
       console.log('data', data)
-      console.log('Board', Board.messages)
+      // console.log('Board', Board.messages)
       this.setState({
         messages: data
       })

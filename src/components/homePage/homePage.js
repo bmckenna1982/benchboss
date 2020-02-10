@@ -3,11 +3,20 @@ import { NavLink } from 'react-router-dom'
 import SchedulePreview from '../schedulePreview/schedulePreview'
 import MessagePreview from '../messagePreview/messagePreview'
 import Comment from '../comment/comment'
+import MessageService from '../services/message-service'
 import Board from '../../messageData'
 import CommentList from '../../commentData'
+import LatestMessage from '../latest-message/latest-message'
 
 
 class HomePage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      messages: [],
+      error: null
+    }
+  }
   // findLastMessage() {    
   //   var mostRecentDate = Math.max.apply(null, Board.messages.map( e => {
   //     return new Date(e.postedDate);
@@ -24,6 +33,25 @@ class HomePage extends Component {
   //   return lastMessage
   // }
   
+componentDidMount() {
+  // MessageService.getMessageBoard()
+  //   .then(data => {
+  //     console.log('data', data)
+  //     this.setState({
+  //       messages: [
+  //         ...data
+  //       ]
+  //     })
+  //   })
+  //   .catch(err => {
+  //     this.setState({
+  //       error: 'Sorry, could not get the messages at this time'
+  //     })
+  //   })    
+  console.log('mounted')
+  
+}
+
   render() {
     return (
       <div className='HomePage'>
@@ -39,11 +67,12 @@ class HomePage extends Component {
           <h2>Latest Message Activity</h2>
           <NavLink className='schedule_link' to={'/message-board'}>
             View Message Board
-          </NavLink> 
-          <div className='latest-message'>            
-            <MessagePreview message={Board.messages[2]}/>
+          </NavLink>
+          <LatestMessage /> 
+          {/* <div className='latest-message'>            
+            <MessagePreview message={this.state.messages[2]}/>
             <Comment comment={CommentList.comments[3]}/>
-          </div>
+          </div> */}
         </section>
       </div>
     )
