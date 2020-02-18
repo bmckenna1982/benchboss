@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import GamePreview from '../gamePreview/gamePreview'
 import ScheduleService from '../services/schedule-service'
-import ScheduleList from '../../scheduleData'
 import './schedule.css'
 
 class Schedule extends Component {
