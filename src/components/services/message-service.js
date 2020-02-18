@@ -1,10 +1,11 @@
+import TokenService from './token-service'
 import config from '../../config'
 
 const MessageService = {
   getMessageBoard() {
     return fetch(`${config.API_ENDPOINT}/message-board`, {
       headers: {
-        Authorization: `Bearer ${config.API_KEY}`
+        // Authorization: `Bearer ${config.API_KEY}`
       },
       method: 'GET',
     })
@@ -18,7 +19,7 @@ const MessageService = {
   getMessage(messageId) {
     return fetch(`${config.API_ENDPOINT}/message-board/${messageId}`, {
       headers: {
-        Authorization: `Bearer ${config.API_KEY}`
+        Authorization: `Bearer ${TokenService.getAuthToken()}`
       },
       method: 'GET',
     })
@@ -32,7 +33,7 @@ const MessageService = {
         console.log('data', data)
         return fetch(`${config.API_ENDPOINT}/message-board/${data.id}/comments`, {
           headers: {
-            Authorization: `Bearer ${config.API_KEY}`
+            Authorization: `Bearer ${TokenService.getAuthToken()}`
           },
           method: 'GET',
         })
@@ -58,7 +59,7 @@ const MessageService = {
   getLatestMessage() {
     return fetch(`${config.API_ENDPOINT}/latest-message`, {
       headers: {
-        Authorization: `Bearer ${config.API_KEY}`
+        // Authorization: `Bearer ${TokenService.getAuthToken()}`
       },
       method: 'GET',
     })
@@ -72,7 +73,7 @@ const MessageService = {
         console.log('data', data)
         return fetch(`${config.API_ENDPOINT}/message-board/${data.id}/latest-comment`, {
           headers: {
-            Authorization: `Bearer ${config.API_KEY}`
+            // Authorization: `Bearer ${config.API_KEY}`
           },
           method: 'GET',
         })
@@ -98,7 +99,7 @@ const MessageService = {
   getLatestComment(messageId) {
     return fetch(`${config.API_ENDPOINT}/message-board/${messageId}/latest-comment`, {
       headers: {
-        Authorization: `Bearer ${config.API_KEY}`
+        // Authorization: `Bearer ${config.API_KEY}`
       },
       method: 'GET',
     })
