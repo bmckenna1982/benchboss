@@ -66,7 +66,7 @@ class GameDetail extends Component {
     const selectedGame = this.state.game
     console.log('selectedGame', selectedGame)
     const currentUserRsvp = this.state.userRsvp
-      ? this.state.userRsvp.game_status
+      ? this.state.userRsvp
       : 'pending'
       
     return (

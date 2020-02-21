@@ -11,7 +11,9 @@ class RSVP extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      userRsvp: null
+      userRsvp: {
+        game_status: ''
+      }
     }
   }
 
@@ -20,16 +22,16 @@ class RSVP extends Component {
     this.setState({
       error: null,
     })
-    console.log('e.target.value', e.target.value)
-
+    
     const userStatus = e.target.value
 
     const rsvp = {
+      id: this.props.userRsvp.id,
       game_id: this.props.rsvp[0].game_id,
       game_status: e.target.value
     }
-
-    RsvpService.postRsvp(rsvp)
+    if(this.props.userRsvp.game_status === 'pending' ) {
+      RsvpService.postRsvp(rsvp)
       .then(res => {
         console.log('Post-res', res)
         this.setState({ userRsvp: userStatus })
@@ -38,6 +40,24 @@ class RSVP extends Component {
       //   e.target.value = ''      
       // })
       .catch(this.setState({ error: 'error' }))
+    } else {
+      //patch instead of post
+      RsvpService.updateRsvp(rsvp)
+        .then(res => {
+          console.log('Patch-res', res)
+          this.setState({ userRsvp: userStatus })
+        })
+    }
+    // RsvpService.postRsvp(rsvp)
+    //   .then(res => {
+    //     console.log('Post-res', res)
+    //     this.setState({ userRsvp: userStatus })
+    //   })
+    //   // .then(()=> {
+    //   //   e.target.value = ''      
+    //   // })
+    //   .catch(this.setState({ error: 'error' }))
+    
   }
 
 
@@ -46,11 +66,11 @@ class RSVP extends Component {
     const rsvpMaybe = this.props.rsvp.filter(status => status.game_status === 'maybe')
     const rsvpOut = this.props.rsvp.filter(status => status.game_status === 'out')
 
-    const currentlyChecked = this.state.userRsvp || this.props.userRsvp
+    const currentlyChecked = this.state.userRsvp.game_status || this.props.userRsvp.game_status
     
-    const rsvpLegend = this.props.userRsvp === 'pending'
+    const rsvpLegend = this.props.userRsvp.game_status === 'pending'
       ? 'Please set your RSVP'
-      : `Your current RSVP status is '${this.props.userRsvp}'` 
+      : `Your current RSVP status is '${this.props.userRsvp.game_status}'` 
 
 
     return (
@@ -68,13 +88,7 @@ class RSVP extends Component {
               <label htmlFor='radioOut'>Out</label>
             </div>
           </fieldset>
-        </form>
-        {/* <h3>Please set your RSVP</h3>
-          <div className='button_container'>
-            <button onClick={this.handleClickIn} className='RSVP_button reply_in'>In</button>
-            <button className='RSVP_button reply_maybe'>Maybe</button>
-            <button className='RSVP_button reply_out'>Out</button>
-          </div>         */}
+        </form>        
         <div className="RSVP_status">
           <div className='RSVP_status_in'>
             <h4>Replied In</h4>
