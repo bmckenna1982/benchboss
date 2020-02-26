@@ -1,117 +1,135 @@
-import React, { Component } from 'react'
-import RsvpService from '../services/rsvp-service'
+import React, { Component } from "react";
+import RsvpService from "../services/rsvp-service";
+import ScheduleContext from "../contexts/scheduleContext";
 
 class RSVP extends Component {
-  // static defaultProps = {
-  //   rsvp: [],
-  //   userRsvp: null,
-  //   error: null
-  // }
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
+      rsvp: [],
       userRsvp: {
-        game_status: ''
+        game_status: ""
       }
-    }
+    };
   }
+
+  static contextType = ScheduleContext;
 
   handleClick = e => {
-    e.preventDefault()
+    e.preventDefault();
     this.setState({
-      error: null,
-    })
-    
-    const userStatus = e.target.value
+      error: null
+    });
 
-    const rsvp = {
-      id: this.props.userRsvp.id,
-      game_id: this.props.rsvp[0].game_id,
-      game_status: e.target.value
-    }
-    if(this.props.userRsvp.game_status === 'pending' ) {
-      RsvpService.postRsvp(rsvp)
-      .then(res => {
-        console.log('Post-res', res)
-        this.setState({ userRsvp: userStatus })
-      })
-      // .then(()=> {
-      //   e.target.value = ''      
-      // })
-      .catch(this.setState({ error: 'error' }))
-    } else {
-      //patch instead of post
-      RsvpService.updateRsvp(rsvp)
+    const userStatus = e.target.value;
+
+    const newRsvp = {
+      id: this.context.userRsvp.id,
+      game_id: this.context.game.id,
+      game_status: e.target.value,
+      user: this.context.user
+    };
+
+    if (!this.context.userRsvp) {
+      RsvpService.postRsvp(newRsvp)
         .then(res => {
-          console.log('Patch-res', res)
-          this.setState({ userRsvp: userStatus })
+          this.context.addToRsvp(newRsvp)
         })
-    }
-    // RsvpService.postRsvp(rsvp)
-    //   .then(res => {
-    //     console.log('Post-res', res)
-    //     this.setState({ userRsvp: userStatus })
-    //   })
-    //   // .then(()=> {
-    //   //   e.target.value = ''      
-    //   // })
-    //   .catch(this.setState({ error: 'error' }))
-    
-  }
+        .catch(this.setState({ error: "error" }));
+    } else {
 
+      RsvpService.updateRsvp(newRsvp).then(res => {
+        this.context.updateRsvp(res.numRowsAffected)
+      });
+    }
+  };
 
   render() {
-    const rsvpIn = this.props.rsvp.filter(status => status.game_status === 'in')
-    const rsvpMaybe = this.props.rsvp.filter(status => status.game_status === 'maybe')
-    const rsvpOut = this.props.rsvp.filter(status => status.game_status === 'out')
+    const rsvpIn = this.context.rsvp.filter(
+      status => status.game_status === "in"
+    );
+    const rsvpMaybe = this.context.rsvp.filter(
+      status => status.game_status === "maybe"
+    );
+    const rsvpOut = this.context.rsvp.filter(
+      status => status.game_status === "out"
+    );
 
-    const currentlyChecked = this.state.userRsvp.game_status || this.props.userRsvp.game_status
-    
-    const rsvpLegend = this.props.userRsvp.game_status === 'pending'
-      ? 'Please set your RSVP'
-      : `Your current RSVP status is '${this.props.userRsvp.game_status}'` 
+    const currentlyChecked = this.context.userRsvp
+      ? this.context.userRsvp.game_status
+      : null
 
+    const rsvpLegend =
+      (!this.context.userRsvp)
+        ? "Please set your RSVP"
+        : `Your current RSVP status is '${this.context.userRsvp.game_status}'`;
 
     return (
-      // <React.Fragment>
-      <div className='RSVP'>
+      <div className="RSVP">
         <form onSubmit={this.handleSubmit}>
           <fieldset>
             <legend>{rsvpLegend}</legend>
-            <div className='RSVP_selection_container'>
-              <input onChange={this.handleClick} checked={currentlyChecked === 'in'} type='radio' id='radioIn' name='rsvp_status' value='in'></input>
-              <label htmlFor='radioIn'>In</label>
-              <input onChange={this.handleClick} checked={currentlyChecked === 'maybe'} type='radio' id='radioMaybe' name='rsvp_status' value='maybe'></input>
-              <label htmlFor='radioMaybe'>Maybe</label>
-              <input onChange={this.handleClick} checked={currentlyChecked === 'out'} type='radio' id='radioOut' name='rsvp_status' value='out'></input>
-              <label htmlFor='radioOut'>Out</label>
+            <div className="RSVP_selection_container">
+              <input
+                onChange={this.handleClick}
+                checked={currentlyChecked === "in"}
+                type="radio"
+                id="radioIn"
+                name="rsvp_status"
+                value="in"
+              ></input>
+              <label htmlFor="radioIn">In</label>
+              <input
+                onChange={this.handleClick}
+                checked={currentlyChecked === "maybe"}
+                type="radio"
+                id="radioMaybe"
+                name="rsvp_status"
+                value="maybe"
+              ></input>
+              <label htmlFor="radioMaybe">Maybe</label>
+              <input
+                onChange={this.handleClick}
+                checked={currentlyChecked === "out"}
+                type="radio"
+                id="radioOut"
+                name="rsvp_status"
+                value="out"
+              ></input>
+              <label htmlFor="radioOut">Out</label>
             </div>
           </fieldset>
-        </form>        
+        </form>
         <div className="RSVP_status">
-          <div className='RSVP_status_in'>
+          <div className="RSVP_status_in">
             <h4>Replied In</h4>
-            <ul className='RSVP_in_list'>
+            <ul className="RSVP_in_list">
               {rsvpIn.map(s => {
-                return <li key={s.user.id}>{s.user.full_name}</li>
+                if (s) {
+                  console.log('s', s)
+                  return <li key={s.user.id}>{s.user.full_name}</li>;
+                }
               })}
             </ul>
           </div>
         </div>
-        <div className='RSVP_status_maybe'>
+        <div className="RSVP_status_maybe">
           <h4>Replied Maybe</h4>
-          <ul className='RSVP_maybe_list'>
+          <ul className="RSVP_maybe_list">
             {rsvpMaybe.map(s => {
-              return <li key={s.user.id}>{s.user.full_name}</li>
+              if (s) {
+                console.log('s', s)
+                return <li key={s.user.id}>{s.user.full_name}</li>;
+              }
             })}
           </ul>
         </div>
-        <div className='RSVP_status_out'>
+        <div className="RSVP_status_out">
           <h4>Replied Out</h4>
-          <ul className='RSVP_out_list'>
+          <ul className="RSVP_out_list">
             {rsvpOut.map(s => {
-              return <li key={s.user.id}>{s.user.full_name}</li>
+              return <li key={s.user.id}>{s.user.full_name}</li>;
             })}
           </ul>
         </div>
@@ -123,9 +141,8 @@ class RSVP extends Component {
           </ul>
         </div> */}
       </div>
-      /* </React.Fragment > */
-    )
+    );
   }
 }
 
-export default RSVP
+export default RSVP;

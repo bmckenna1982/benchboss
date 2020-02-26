@@ -12,7 +12,7 @@ const RsvpService = {
       },
       body: JSON.stringify(rsvp)
     })
-      .then(res => 
+      .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json())
@@ -27,10 +27,10 @@ const RsvpService = {
       },
       body: JSON.stringify(newRsvp)
     })
-      .then(res =>         
-       (!res.ok)
+      .then(res =>
+        (!res.ok)
           ? res.json().then(e => Promise.reject(e))
-          : res.json()    
+          : res.json()
       )
   },
 }

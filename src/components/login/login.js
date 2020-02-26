@@ -1,83 +1,78 @@
-import React, { Component } from 'react'
-import TokenService from '../services/token-service'
-import AuthApiService from '../services/auth-api-service'
-import { NavLink } from 'react-router-dom'
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+
+import TokenService from "../services/token-service";
+import AuthApiService from "../services/auth-api-service";
+import IdleService from "../services/idle-service";
 
 class Login extends Component {
   static defaultProps = {
     location: {},
     history: {
-      push: () => { },
-    },
-  }
+      push: () => { }
+    }
+  };
 
-  state = { error: null }
+  state = { error: null };
 
   handleLoginSuccess = () => {
-    const { location, history } = this.props
-    const destination = (location.state || {}).from || '/'
-    console.log('destination', destination)
-    history.push(destination)
-  }
+    const { location, history } = this.props;
+    const destination = (location.state || {}).from || "/";
+    console.log("destination", destination);
+    history.push(destination);
+  };
 
-  handleSubmitJwtAuth = (ev) => {
-    ev.preventDefault()
-    this.setState({ error: null })
-    console.log('ev.target', ev.target)
-    const { user_name, password } = ev.target
+  handleSubmitJwtAuth = ev => {
+    ev.preventDefault();
+    this.setState({ error: null });
+    console.log("ev.target", ev.target);
+    const { user_name, password } = ev.target;
 
     AuthApiService.postLogin({
       user_name: user_name.value,
       password: password.value
     })
       .then(res => {
-        console.log('res', res)
-        user_name.value = ''
-        password.value = ''
-        TokenService.saveAuthToken(res.authToken)
-        console.log('auth')
-        this.handleLoginSuccess()
+        console.log("res", res);
+        user_name.value = "";
+        password.value = "";
+        TokenService.saveAuthToken(res.authToken);
+        console.log("auth");
+        this.handleLoginSuccess();
       })
       .catch(res => {
-        console.log('error', res.error)
-        this.setState({ error: res.error })
-      })
-    // TokenService.saveAuthToken(
-    //   TokenService.makeBasicAuthToken(user_name.value, password.value)
-    // )
+        console.log("error", res.error);
+        this.setState({ error: res.error });
+      });
+  };
 
-    // saveCredentials(
-    //   windows.btoa(userName.value + ':' + password.value)
-    // )
-  }
+
+
   render() {
-    const { error } = this.state
+    const { error } = this.state;
     return (
-      <section className='log-in'>
-        <form onSubmit={this.handleSubmitJwtAuth} className='log-in-form'>
-          <div role='alert'>
-            {error && <p className='red'>{error}</p>}
-          </div>
+      <section className="log-in">
+        <form onSubmit={this.handleSubmitJwtAuth} className="log-in-form">
+          <div role="alert">{error && <p className="red">{error}</p>}</div>
           <legend>Log in to your account</legend>
           <div>
-            <label htmlFor='user_name'>Email</label>
-            <input type='text' name='user_name' id='user_name' />
+            <label htmlFor="user_name">Email</label>
+            <input type="text" name="user_name" id="user_name" />
           </div>
           <div>
-            <label htmlFor='password'>Password</label>
-            <input type='password' name='password' id='password' />
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" id="password" />
           </div>
-          <button type='submit'>Log in</button>
+          <button type="submit">Log in</button>
           <div>
             Register for an account here:
-            <NavLink to='/register'>Register</NavLink>
+            <NavLink to="/register">Register</NavLink>
             {/* <a href='/register.html'>Register</a> */}
           </div>
-
         </form>
       </section>
-    )
+    );
   }
 }
 
-export default Login
+export default Login;
