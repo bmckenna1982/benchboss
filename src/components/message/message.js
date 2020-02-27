@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
 import Comment from '../comment/comment'
+import AddComment from '../addComment/addComment'
 import MessageService from '../services/message-service'
 import { NiceDate } from '../../utils/utils'
 import './message.css'
+import MessageContext from '../contexts/messageContext'
 
 
 class Message extends Component {
@@ -18,6 +20,7 @@ class Message extends Component {
 
       },
       comments: [],
+      addFormOpen: false,
       error: null
     }
   }
@@ -49,43 +52,84 @@ class Message extends Component {
         })
         return data.id
       })
-      .catch(err => {        
+      .catch(err => {
         this.setState({
           error: 'Unauthorized'
         })
       })
   }
 
+  handleClick = () => {
+    // e.preventdefault()
+    console.log('this.state.addFormOpen', this.state.addFormOpen)
+    this.setState({
+      addFormOpen: (!this.state.addFormOpen)
+    })
+  }
+
+  toggleCommentForm = () => {
+    this.setState({
+      addFormOpen: (!this.state.addFormOpen)
+    })
+  }
+
+  addComment = (newComment) => {
+    const newCommentAuthorName = {
+      ...newComment,
+      author: newComment.author.full_name
+    }
+    this.setState({
+      comments: [...this.state.comments, newCommentAuthorName]
+    })
+  }
+
   render() {
     const messageComments = this.state.comments
     const error = this.state.error
+    let addForm
     console.log('error', error)
     // console.log('this.props.match.params.messageId', this.props.match.params.messageId)
     // console.log('CommentsList.comments[0].messageId', CommentsList.comments[0].messageId)
     console.log('messageComments', messageComments)
+    if (this.state.addFormOpen) {
+      addForm = <AddComment message_id={this.props.match.params.messageId} />
+    } else {
+      addForm = <button className='addComment' onClick={this.handleClick}>Add Comment</button>
+    }
+    const contextValue = {
+      message: this.state.message,
+      comments: this.state.comments,
+      addFormOpen: this.state.addFormOpen,
+      addComment: this.addComment,
+      toggleCommentForm: this.toggleCommentForm,
+    }
+    console.log('this.state.message.posted_date', this.state.message.posted_date)
     return (
-      <div className='Message_container'>
-        <span className='error'>
-          {error
-            ? <p className='red'>{error}</p>
-            : ''
-          }
-        </span>
-        <h2 className='Message_title'>{this.state.message.title}</h2>
-        <div className='Message_content'>{this.state.message.content}</div>
-        <div className='Message_author'>{this.state.message.author}</div>
-        <div className='Message_date'>
-          <NiceDate date={this.state.message.posted_date} />
-        </div>
-        {/* <div>
+      <MessageContext.Provider value={contextValue}>
+        <div className='Message_container'>
+          <span className='error'>
+            {error
+              ? <p className='red'>{error}</p>
+              : ''
+            }
+          </span>
+          <h2 className='Message_title'>{this.state.message.title}</h2>
+          <div className='Message_content'>{this.state.message.content}</div>
+          <div className='Message_author'>{this.state.message.author}</div>
+          <div className='Message_date'>
+            <NiceDate date={this.state.message.posted_date} />
+          </div>
+          {/* <div>
           {Board.messages[this.props.match.params.messageId - 1]}
         </div> */}
-        <button className='addComment'>Add Comment</button>
-        <div>
-          {messageComments.map((comment, index) =>
-            <Comment key={index} comment={comment} />)}
+          {addForm}
+          {/* <button className='addComment' onClick={this.handleClick}>Add Comment</button> */}
+          <div>
+            {messageComments.map((comment, index) =>
+              <Comment key={index} comment={comment} />)}
+          </div>
         </div>
-      </div>
+      </MessageContext.Provider>
     )
   }
 }
