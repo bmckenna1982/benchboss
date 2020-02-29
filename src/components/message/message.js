@@ -87,14 +87,11 @@ class Message extends Component {
     const messageComments = this.state.comments
     const error = this.state.error
     let addForm
-    console.log('error', error)
-    // console.log('this.props.match.params.messageId', this.props.match.params.messageId)
-    // console.log('CommentsList.comments[0].messageId', CommentsList.comments[0].messageId)
-    console.log('messageComments', messageComments)
+
     if (this.state.addFormOpen) {
       addForm = <AddComment message_id={this.props.match.params.messageId} />
     } else {
-      addForm = <button className='addComment' onClick={this.handleClick}>Add Comment</button>
+      addForm = <button className='addComment' onClick={this.toggleCommentForm}>Add Comment</button>
     }
     const contextValue = {
       message: this.state.message,

@@ -22,7 +22,7 @@ class RSVP extends Component {
       error: null
     });
 
-    const userStatus = e.target.value;
+    // const userStatus = e.target.value;
 
     const newRsvp = {
       id: this.context.userRsvp.id,

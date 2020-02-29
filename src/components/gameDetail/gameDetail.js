@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { NiceMonth, NiceDay, NiceTime } from "../../utils/utils";
-import Schedule from "../../scheduleData";
 import ScheduleService from "../services/schedule-service";
 import RSVP from "../rsvp/rsvp";
 import ScheduleContext from "../contexts/scheduleContext";

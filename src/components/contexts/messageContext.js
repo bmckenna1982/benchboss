@@ -12,7 +12,9 @@ const MessageContext = React.createContext({
   addFormOpen: false,
   error: null,
   toggleCommentForm: () => { },
-  addComment: () => { }
+  addComment: () => { },
+  toggleMessageForm: () => { },
+  addMessage: () => { }
 });
 
 export default MessageContext;

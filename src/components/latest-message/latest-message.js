@@ -24,15 +24,26 @@ class LatestMessage extends Component {
   componentDidMount() {
     MessageService.getLatestMessage()
       .then(data => {
-        // console.log('latestMessage', data)
-        this.setState({
-          message: data.message,
-          comment: {
+        console.log('latestMessage', data)
+        //if no comments exist then set state to null for comments
+        const newComment = (!data.comment)
+          ? null
+          : {
             id: data.comment.id,
             content: data.comment.content,
             posted_date: data.comment.posted_date,
             author: data.comment.author.full_name
           }
+        console.log('newComment', newComment)
+        this.setState({
+          message: data.message,
+          // comment: {
+          //   id: data.comment.id,
+          //   content: data.comment.content,
+          //   posted_date: data.comment.posted_date,
+          //   author: data.comment.author.full_name
+          // }
+          comment: newComment
         });
       })
       .catch(err => {
@@ -43,11 +54,19 @@ class LatestMessage extends Component {
   }
 
   render() {
-    // console.log("this.state.comment", this.state.comment);
+    const latestComment = (!this.state.comment)
+      ? <div className="noComment_container">
+        This message has no comments at this time
+      </div>
+      : <Comment comment={this.state.comment} />
+
+    console.log("this.state.comment", this.state.comment);
+    console.log('latestComment', latestComment)
     return (
       <div className="latest-message">
         <MessagePreview message={this.state.message} />
-        <Comment comment={this.state.comment} />
+        {/* <Comment comment={this.state.comment} /> */}
+        {latestComment}
       </div>
     );
   }
