@@ -25,7 +25,7 @@ class RSVP extends Component {
     // const userStatus = e.target.value;
 
     const newRsvp = {
-      id: this.context.userRsvp.id,
+      // id: this.context.userRsvp.id,
       game_id: this.context.game.id,
       game_status: e.target.value,
       user: this.context.user
@@ -34,11 +34,12 @@ class RSVP extends Component {
     if (!this.context.userRsvp) {
       RsvpService.postRsvp(newRsvp)
         .then(res => {
-          this.context.addToRsvp(newRsvp)
+          this.context.addToRsvp(res)
         })
         .catch(this.setState({ error: "error" }));
     } else {
-
+      newRsvp.id = this.context.userRsvp.id
+      console.log('update')
       RsvpService.updateRsvp(newRsvp).then(res => {
         this.context.updateRsvp(res.numRowsAffected)
       });
@@ -110,6 +111,7 @@ class RSVP extends Component {
                   console.log('s', s)
                   return <li key={s.user.id}>{s.user.full_name}</li>;
                 }
+                return ''
               })}
             </ul>
           </div>
@@ -122,6 +124,7 @@ class RSVP extends Component {
                 console.log('s', s)
                 return <li key={s.user.id}>{s.user.full_name}</li>;
               }
+              return ''
             })}
           </ul>
         </div>

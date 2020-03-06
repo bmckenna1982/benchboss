@@ -12,8 +12,10 @@ import Register from "../register/register";
 import MessageBoard from "../messageBoard/messageBoard";
 import Schedule from "../schedule/schedule";
 import GameDetail from "../gameDetail/gameDetail";
+import AddMessage from "../addMessage/addMessage";
 import AddComment from "../addComment/addComment";
 import AddGame from "../addGame/addGame";
+import LandingPage from '../landingPage/landingPage'
 import TokenService from "../services/token-service";
 import AuthApiService from "../services/auth-api-service";
 import IdleService from "../services/idle-service";
@@ -90,7 +92,8 @@ class App extends Component {
         <main role="main">
           <Hero />
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/home" component={HomePage} />
             <PublicOnlyRoute exact path="/log-in" component={Login} />
             <PublicOnlyRoute exact path="/register" component={Register} />
             <Route exact path="/schedule" component={Schedule} />
@@ -107,7 +110,7 @@ class App extends Component {
             />
             <PrivateRoute exact path="/add-comment" component={AddComment} />
             <PrivateRoute exact path="/add-game" component={AddGame} />
-            {/* <Route exact path='/addMessage' component={AddMessage} /> */}
+            <PrivateRoute exact path='/add-message' component={AddMessage} />
           </Switch>
         </main>
         <footer>&copy; BENCHBOSS 2020</footer>

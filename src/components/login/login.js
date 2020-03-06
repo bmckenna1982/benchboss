@@ -17,7 +17,7 @@ class Login extends Component {
 
   handleLoginSuccess = () => {
     const { location, history } = this.props;
-    const destination = (location.state || {}).from || "/";
+    const destination = (location.state || {}).from || "/home";
     console.log("destination", destination);
     history.push(destination);
   };
@@ -52,6 +52,7 @@ class Login extends Component {
     const { error } = this.state;
     return (
       <section className="log-in">
+        <p>To Demo the app login with user: demo@demo.com and password: Demo123!</p>
         <form onSubmit={this.handleSubmitJwtAuth} className="log-in-form">
           <div role="alert">{error && <p className="red">{error}</p>}</div>
           <legend>Log in to your account</legend>

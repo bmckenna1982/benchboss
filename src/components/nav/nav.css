@@ -1,0 +1,7 @@
+.navigation_home {
+  justify-self: flex-start;
+}
+
+.navigation_login {
+  justify-self: flex-end;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import MessagePreview from '../messagePreview/messagePreview'
 import AddMessage from '../addMessage/addMessage'
 import MessageService from '../services/message-service'
@@ -61,7 +62,10 @@ class MessageBoard extends Component {
       <MessageContext.Provider value={contextValue}>
         <section className="MessageBoard">
           <h2>Message Board</h2>
-          {addForm}
+          {/* {addForm} */}
+          <Link to='/add-message'>
+            <button className='addMessage'>Add Message</button>
+          </Link>
           {messageArray.map((message, index) => (
             <MessagePreview key={index} message={message} />
           ))}

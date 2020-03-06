@@ -37,13 +37,13 @@ class AddMessage extends Component {
           content: '',
           title: ''
         })
-        this.context.toggleMessageForm()
+        // this.context.toggleMessageForm()
         this.context.addMessage(res)
-        console.log('e', e)
+        return res
       })
-      .then(() => {
-        console.log('e', e)
-        // this.props.history.push(`/message-board/${this.props.message_id}`)
+      .then((res) => {
+        // console.log('e', e)
+        this.props.history.push(`/message-board/${res.id}`)
       })
   }
 
