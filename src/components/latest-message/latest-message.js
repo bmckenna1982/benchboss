@@ -1,56 +1,75 @@
-import React, { Component } from 'react'
-import Comment from '../comment/comment'
-import MessageService from '../services/message-service'
-import MessagePreview from '../messagePreview/messagePreview'
+import React, { Component } from "react";
+import Comment from "../comment/comment";
+import MessageService from "../services/message-service";
+import MessagePreview from "../messagePreview/messagePreview";
 
 class LatestMessage extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       message: {
         id: 1,
         author: {
-          full_name: '',
+          full_name: ""
         },
-        posted_date: '2020-02-07T16:48:00.000Z',
+        posted_date: "2020-02-07T16:48:00.000Z"
       },
       comment: {
-        posted_date: '2020-02-07T16:48:00.000Z'
+        posted_date: "2020-02-07T16:48:00.000Z"
       },
       error: null
-    }
+    };
   }
 
   componentDidMount() {
     MessageService.getLatestMessage()
       .then(data => {
         console.log('latestMessage', data)
-        this.setState({
-          message: data.message,
-          comment: {
+        //if no comments exist then set state to null for comments
+        const newComment = (!data.comment)
+          ? null
+          : {
             id: data.comment.id,
             content: data.comment.content,
             posted_date: data.comment.posted_date,
             author: data.comment.author.full_name
-          },
-        })
+          }
+        console.log('newComment', newComment)
+        this.setState({
+          message: data.message,
+          // comment: {
+          //   id: data.comment.id,
+          //   content: data.comment.content,
+          //   posted_date: data.comment.posted_date,
+          //   author: data.comment.author.full_name
+          // }
+          comment: newComment
+        });
       })
       .catch(err => {
         this.setState({
-          error: 'Sorry, could not get the messages at this time'
-        })
-      })
+          error: "Sorry, could not get the messages at this time"
+        });
+      });
   }
 
   render() {
-    console.log('this.state.comment', this.state.comment)
-    return (
-      <div className='latest-message'>
-        <MessagePreview message={this.state.message} />
-        <Comment comment={this.state.comment} />
+    const latestComment = (!this.state.comment)
+      ? <div className="noComment_container">
+        This message has no comments at this time
       </div>
-    )
+      : <Comment comment={this.state.comment} />
+
+    console.log("this.state.comment", this.state.comment);
+    console.log('latestComment', latestComment)
+    return (
+      <div className="latest-message">
+        <MessagePreview message={this.state.message} />
+        {/* <Comment comment={this.state.comment} /> */}
+        {latestComment}
+      </div>
+    );
   }
 }
 
-export default LatestMessage
+export default LatestMessage;

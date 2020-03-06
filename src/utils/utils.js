@@ -6,16 +6,16 @@ export function NiceDate({ date, format = 'MMMM do yyyy h:mm a' }) {
 }
 
 export function NiceMonth({ date, format = 'MMM' }) {
-  const parseDate = parseISO(date)  
+  const parseDate = parseISO(date)
   return formatDate(parseDate, format)
 }
 
 export function NiceDay({ date, format = 'do' }) {
-  const parseDate = parseISO(date)  
+  const parseDate = parseISO(date)
   return formatDate(parseDate, format)
 }
 
-export function NiceTime({ date, format = 'h:mm a' }) {  
+export function NiceTime({ date, format = 'h:mm a' }) {
   const parseDate = parseISO(date)
   return formatDate(parseDate, format)
 }

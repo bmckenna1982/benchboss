@@ -1,0 +1,9 @@
+.AddMessage_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AddMessage_form__submit {
+  width: 150px;
+}

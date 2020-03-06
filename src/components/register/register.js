@@ -11,7 +11,7 @@ class Register extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { full_name, user_name, password, teamcode } = ev.target
+    const { full_name, user_name, password } = ev.target
 
     this.setState({ error: null })
 
@@ -58,10 +58,10 @@ class Register extends Component {
             <label htmlFor='password'>Password</label>
             <input type='password' name='password' id='password' />
           </div>
-          <div>
+          {/* <div>
             <label htmlFor='teamcode'>Team Code</label>
             <input type='teamcode' name='teamcode' id='teamcode' />
-          </div>
+          </div> */}
           <button type='submit'>Sign Up</button>
         </form>
       </section>
