@@ -1,3 +1,7 @@
+# Bench Boss
+
+Bench Boss is a hockey team management app that makes it easy for users to view the schedule, add their RSVP for games and cummunicate with team members. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
