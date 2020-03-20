@@ -14,7 +14,6 @@ class AddComment extends Component {
   static contextType = MessageContext
 
   handleChange = (event) => {
-    // console.log('event.target.value', event)
     this.setState({ content: event.target.value })
   }
 
@@ -26,11 +25,9 @@ class AddComment extends Component {
     }
     CommentService.postComment(newComment)
       .then(res => {
-        console.log('res', res)
         this.setState({ content: '' })
         this.context.toggleCommentForm()
         this.context.addComment(res)
-        // this.props.history.push(`/message-board/${this.props.message_id}`)
       })
   }
 
@@ -42,7 +39,6 @@ class AddComment extends Component {
         <form className='AddComment_form' onSubmit={this.handleSubmit}>
           <div className='form-group'>
             <label htmlFor='commentContent'>New comment content: </label>
-            {/* <textarea name='commentContent' id='commentContent' rows='6' cols='45' required onChange={e => this.updateValue(e.target.value)}></textarea>             */}
             <textarea name='commentContent' value={this.state.comment} onChange={this.handleChange} id='commentContent' rows='6' cols='45' required></textarea>
           </div>
           <button

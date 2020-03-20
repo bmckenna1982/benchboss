@@ -10,7 +10,6 @@ let games = [];
 
 const schedule = require('./src/schedule-data')
 
-console.log('schedule', schedule)
 const inserts = function () {
   const insertPromises = [];
   schedule.forEach(function (game) {

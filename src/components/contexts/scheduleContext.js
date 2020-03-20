@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
 const ScheduleContext = React.createContext({
   schedule: [],
   game: {
-    time: ""
+    time: ''
   },
   rsvp: [
     {
       user: {
-        full_name: ""
+        full_name: ''
       }
     }
   ],
   userRsvp: {
-    game_status: ""
+    game_status: ''
   },
   user: {
     id: null

@@ -1,5 +1,5 @@
-import jwtDecode from "jwt-decode"
-import config from "../../config"
+import jwtDecode from 'jwt-decode'
+import config from '../../config'
 
 let _timeoutId
 const _TEN_SECONDS_IN_MS = 10000
@@ -12,7 +12,7 @@ const TokenService = {
     return window.sessionStorage.getItem(config.TOKEN_KEY)
   },
   clearAuthToken() {
-    console.info("clearing the auth token")
+    // console.info('clearing the auth token')
     window.sessionStorage.removeItem(config.TOKEN_KEY)
   },
   hasAuthToken() {
@@ -37,7 +37,6 @@ const TokenService = {
   },
   queueCallbackBeforeExpiry(callback) {
     /* get the number of ms from now until the token expires */
-    console.log('queue callback')
     const msUntilExpiry = TokenService._getMsUntilExpiry(
       TokenService.readJwtToken()
     )
@@ -46,7 +45,6 @@ const TokenService = {
       the callback is passed in as an argument so could be anything,
         in this app, the callback is for calling the refresh endpoint
     */
-    console.log('msUntilExpiry', msUntilExpiry)
     _timeoutId = setTimeout(callback, msUntilExpiry - _TEN_SECONDS_IN_MS)
   },
   clearCallbackBeforeExpiry() {

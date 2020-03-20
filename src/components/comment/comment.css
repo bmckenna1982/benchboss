@@ -1,9 +1,10 @@
 .Comment_container {
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
   border-radius: 5px;
   padding: 5px;
   background-color: #ffffff;
   margin: 5px 0;
+  width: 80%;
 }
 
 .Comment {
@@ -14,4 +15,8 @@
 .Comment_author, .Comment_date {
   font-size: 14px;
   text-align: right;
+}
+
+.Comment_container:nth-child(even) {
+  margin-left: 20%
 }

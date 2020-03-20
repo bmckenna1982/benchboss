@@ -9,25 +9,12 @@ const ScheduleService = {
       },
       method: 'GET',
     })
-    .then(res => {
-      if (!res.ok) {
-        throw new Error(res.statusText)
-      }
-      return res.json()
-    })
-    // .then(data => {
-    //   console.log('data', data)
-    //   this.setState({
-    //     schedule: [
-    //       ...data
-    //     ]
-    //   })
-    // })
-    // .catch(err => {
-    //   this.setState({
-    //     error: 'Sorry, could not get the schedule at this time'
-    //   })
-    // })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(res.statusText)
+        }
+        return res.json()
+      })
   },
   getGame(gameId) {
     return fetch(`${config.API_ENDPOINT}/schedule/${gameId}`, {
@@ -53,7 +40,7 @@ const ScheduleService = {
           : res.json()
       )
   },
-  
+
 }
 
 export default ScheduleService

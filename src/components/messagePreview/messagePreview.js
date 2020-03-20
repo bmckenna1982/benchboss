@@ -6,10 +6,10 @@ import './messagePreview.css'
 
 
 class MessagePreview extends Component {
-  
-  render() {    
+
+  render() {
     return (
-      <div className='MessagePreview_container'>
+      <div className='MessagePreview_container raised' id='MessagePreview'>
         <Link to={`/message-board/${this.props.message.id}`}>
           <div className='MessagePreview_title'>{this.props.message.title}</div>
           <div className='MessagePreview_author'>{this.props.message.author.full_name}</div>
@@ -17,7 +17,7 @@ class MessagePreview extends Component {
             <NiceDate date={this.props.message.posted_date} />
           </div>
         </Link>
-        <div className='comment_icon'>          
+        <div className='comment_icon raised'>
           {this.props.message.number_of_comments}
         </div>
       </div>
