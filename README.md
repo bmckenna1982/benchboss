@@ -12,5 +12,5 @@ Bench Boss allows anyone to quickly view upcoming games and the most recent mess
 
 ## Built With
 
-* React
+* [React](https://reactjs.org/) - web framework
 
