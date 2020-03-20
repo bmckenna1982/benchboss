@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import MessagePreview from '../messagePreview/messagePreview'
-import AddMessage from '../addMessage/addMessage'
 import MessageService from '../services/message-service'
 import MessageContext from '../contexts/messageContext'
 
@@ -50,21 +49,21 @@ class MessageBoard extends Component {
       toggleMessageForm: () => { },
       addMessage: () => { }
     }
-    let addForm
+    // let addForm
 
-    if (this.state.addFormOpen) {
-      addForm = <AddMessage message_id={this.props.match.params.messageId} />
-    } else {
-      addForm = <button className='addMessage' onClick={this.toggleMessageForm}>Add Message</button>
-    }
+    // if (this.state.addFormOpen) {
+    //   addForm = <AddMessage message_id={this.props.match.params.messageId} />
+    // } else {
+    //   addForm = <button className='addMessage' onClick={this.toggleMessageForm}>Add Message</button>
+    // }
     const messageArray = this.state.messages
     return (
       <MessageContext.Provider value={contextValue}>
-        <section className="MessageBoard">
+        <section className='MessageBoard background_section'>
           <h2>Message Board</h2>
           {/* {addForm} */}
           <Link to='/add-message'>
-            <button className='addMessage'>Add Message</button>
+            <button className='addMessage bttn'>Add Message</button>
           </Link>
           {messageArray.map((message, index) => (
             <MessagePreview key={index} message={message} />

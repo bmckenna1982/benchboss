@@ -6,3 +6,57 @@
 .LandingPage_header {
   padding: 15px;
 }
+
+.LandingPage {   
+  background-image: url('https://benchboss.s3.us-east-2.amazonaws.com/teamBackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  height: calc(100vh - 91px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landingPage_wrapper { 
+  padding: 10px 10px; 
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+.LandingPage h1, .LandingPage p {
+  color: #fff;
+}
+
+.login_button {  
+	box-shadow: 0px 10px 14px -7px #276873;
+	background: rgb(1,64,43);
+  background: linear-gradient(0deg,
+   rgba(1,64,43,1) 0%,
+   rgba(2,113,77,1) 25%,
+   rgba(1,162,99,1) 100%);
+  border: none;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color: rgb(223, 221, 221);
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px rgb(2,113,77);
+}
+.login_button:hover {
+	background: linear-gradient(0deg,
+   rgba(1,162,99,1) 0%,
+   rgba(2,113,77,1) 25%,
+    rgba(1,64,43,1) 100%);
+  background-color:rgba(1,162,99,1);
+  color: #fff;
+}
+.login_button:active {
+	position:relative;
+	top:1px;
+}

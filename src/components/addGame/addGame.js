@@ -18,9 +18,8 @@ class AddGame extends Component {
   )
 
   render() {
-    console.log('this.locations()', this.locations())
     return (
-      <div className="AddGame">
+      <div className='AddGame'>
         <h2>Add Game to Schedule</h2>
         {/* <ValidationError message={this.validateName()} /> */}
         <DateTimePicker value={this.state.date} onChange={this.handleChange} />

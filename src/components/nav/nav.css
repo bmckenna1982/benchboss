@@ -1,7 +1,10 @@
-.navigation_home {
-  justify-self: flex-start;
+.app_name {
+  flex-grow: 1
 }
 
-.navigation_login {
-  justify-self: flex-end;
+.navigation_home + .navigation_login { 
+  margin-left: 2%; 
+}
+.NavMenu_Link:hover, .navigation_login:hover { 
+  color: #fff; 
 }

@@ -1,8 +1,9 @@
 .GamePreview_container {
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
   border-radius: 5px;
   background-color: #ffffff;
   padding: 5px;
+  margin: 10px 0;
 } 
 
 .GamePreview_date {
@@ -27,26 +28,68 @@ display: flex;
 width: 100%;
 text-decoration: none;
 color: #333;
+align-items: center;
 }
 
-.MessagePreview_container {
-  border: 1px solid #333;
-  border-radius: 5px;
-  background-color: #ffffff;
-  padding: 5px;
-  position: relative;
+
+.raised {
+    -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.raised:hover {
+    -webkit-box-shadow: 0 7px 5px -5px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 7px 5px -5px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 7px 5px -5px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-/* .latest-message a{
-  border: 1px solid #333;
-} */
 
-.MessagePreview_title {
-  font-size: 16px;
-  text-align: left;
+@media only screen and (min-width: 768px) {
+
+  .GamePreview_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    line-height: 20px;
+    padding-left: 10px;
+  }
+  
+  .GamePreview_opponent {
+    flex: 3;
+    text-align: left;
+  }
+  .GamePreview_date {
+    width: 70px;
+  }
+  .GamePreview_container {
+    padding-right: 15px;
+  }
+  
+  .GamePreview_time, .GamePreview_location {  
+    flex: 1;
+    text-align: left;
+    /* font-size: 14px; */
+    /* padding: 0 5px; */
+  }
 }
 
-.MessagePreview_author, .MessagePreview_date {
-  font-size: 14px;
-  text-align: right;
+@media only screen and (min-width: 1025px) {
+  .Schedule_list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .GamePreview_container {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+  }
+  .GamePreview_container a {
+    flex-direction: column;
+  }
+  .GamePreview_info {
+    flex-direction: column;
+  }
+
+
 }

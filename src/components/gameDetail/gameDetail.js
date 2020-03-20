@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import { NiceMonth, NiceDay, NiceTime } from "../../utils/utils";
-import ScheduleService from "../services/schedule-service";
-import RSVP from "../rsvp/rsvp";
-import ScheduleContext from "../contexts/scheduleContext";
-import "./gameDetail.css";
+import React, { Component } from 'react';
+import { NiceMonth, NiceDay, NiceTime } from '../../utils/utils';
+import ScheduleService from '../services/schedule-service';
+import RSVP from '../rsvp/rsvp';
+import ScheduleContext from '../contexts/scheduleContext';
+import './gameDetail.css';
 
 class GameDetail extends Component {
   static defaultProps = {};
 
   state = {
     game: {
-      time: "2020-02-19T10:54:00.000Z"
+      time: '2020-02-19T10:54:00.000Z'
     },
     rsvp: [
       {
         user: {
-          full_name: ""
+          full_name: ''
         }
       }
     ],
     userRsvp: {
-      game_status: ""
+      game_status: ''
     },
     user: {},
     error: null
@@ -81,25 +81,28 @@ class GameDetail extends Component {
 
     // const currentUserRsvp = this.state.userRsvp
     //   ? this.state.userRsvp
-    //   : "pending";
+    //   : 'pending';
 
     return (
       <ScheduleContext.Provider value={contextValue}>
-        <section className="GameDetail">
+        <section className='GameDetail background_section'>
           <h2>{selectedGame.summary}</h2>
-          <div className="GameDetail_Date">
-            <div className="month">
+          <div className='GameDetail_Date'>
+            <div className='month'>
               <NiceMonth date={selectedGame.time} />
             </div>
-            <div className="day">
+            <div className='day'>
               <NiceDay date={selectedGame.time} />
             </div>
-            <div className="GamePreview_time">
-              <NiceTime date={selectedGame.time} />
-            </div>
-            <div className="GamePreview_location">{selectedGame.location}</div>
-            <RSVP />
           </div>
+          <div className='GameDetail_time'>
+            <NiceTime date={selectedGame.time} />
+          </div>
+          <div className='GameDetail_location'>
+            {selectedGame.location}
+          </div>
+
+          <RSVP />
         </section>
       </ScheduleContext.Provider>
     );

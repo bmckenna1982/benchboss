@@ -1,0 +1,8 @@
+.latest-message {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 5px;
+  position: relative;
+  max-width: 1024px;
+  margin: 20px auto;
+}

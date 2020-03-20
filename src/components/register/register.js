@@ -17,7 +17,7 @@ class Register extends Component {
 
     AuthApiService.postUser({
       full_name: full_name.value,
-      user_name: user_name.value,
+      user_name: user_name.value.toLowerCase(),
       password: password.value,
     })
       .then(user => {
@@ -27,14 +27,12 @@ class Register extends Component {
         this.handleRegistrationSuccess()
       })
       .catch(res => {
-        console.log('res.error', res.error)
         this.setState({ error: res.error })
       })
   }
 
   render() {
     const error = this.state.error
-    console.log('error', error)
     return (
       <section className='registration'>
         <form onSubmit={this.handleSubmit} className='register-form'>
@@ -46,10 +44,6 @@ class Register extends Component {
             <label htmlFor='full_name'>full name</label>
             <input placeholder='full Name' type='text' name='full_name' id='full_name' />
           </div>
-          {/* <div>
-              <label for='last_name'>Last name</label>
-              <input type='text' name='last_name' id='last_name' placeholder='Last Name' />
-          </div> */}
           <div>
             <label htmlFor='user_name'>Email</label>
             <input type='text' name='user_name' id='user_name' />
@@ -58,10 +52,6 @@ class Register extends Component {
             <label htmlFor='password'>Password</label>
             <input type='password' name='password' id='password' />
           </div>
-          {/* <div>
-            <label htmlFor='teamcode'>Team Code</label>
-            <input type='teamcode' name='teamcode' id='teamcode' />
-          </div> */}
           <button type='submit'>Sign Up</button>
         </form>
       </section>

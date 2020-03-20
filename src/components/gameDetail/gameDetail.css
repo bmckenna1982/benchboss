@@ -8,6 +8,14 @@
   border: 1px solid #333;
 } */
 
+.GameDetail_Date {
+  display: flex;
+  justify-content: center;  
+}
+
+.month, .day {
+   padding: 0 5px
+}
 .button_container {
   display: flex;
   justify-content: space-evenly;  
@@ -15,4 +23,9 @@
 
 .RSVP_button {
   width: 100px;
+}
+
+
+@media only screen and (min-width: 1025px) {
+
 }

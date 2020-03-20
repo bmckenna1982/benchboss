@@ -1,13 +1,13 @@
-import config from "../../config"
-import TokenService from "./token-service"
-import IdleService from "./idle-service"
+import config from '../../config'
+import TokenService from './token-service'
+import IdleService from './idle-service'
 
 const AuthApiService = {
   postLogin(credentials) {
     return fetch(`${config.API_ENDPOINT}/auth/login`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "content-type": "application/json"
+        'content-type': 'application/json'
       },
       body: JSON.stringify(credentials)
     })
@@ -32,9 +32,9 @@ const AuthApiService = {
   },
   postUser(user) {
     return fetch(`${config.API_ENDPOINT}/users`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "content-type": "application/json"
+        'content-type': 'application/json'
       },
       body: JSON.stringify(user)
     }).then(res =>
@@ -42,25 +42,18 @@ const AuthApiService = {
     )
   },
   postRefreshToken() {
-    console.log('refreshtoken')
     return fetch(`${config.API_ENDPOINT}/auth/refresh`, {
-      method: "POST",
+      method: 'POST',
       headers: {
         'Authorization': `bearer ${TokenService.getAuthToken()}`
       }
     })
       .then(res =>
-        // console.log('res', res)
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
       .then(res => {
-        /*
-          similar logic to whenever a user logs in, the only differences are:
-          - we don't need to queue the idle timers again as the user is already logged in.
-          - we'll catch the error here as this refresh is happening behind the scenes
-        */
         TokenService.saveAuthToken(res.authToken)
         TokenService.queueCallbackBeforeExpiry(() => {
           AuthApiService.postRefreshToken()
@@ -68,7 +61,6 @@ const AuthApiService = {
         return res
       })
       .catch(err => {
-        console.log("refresh token request error")
         console.error(err)
       })
   }

@@ -1,9 +1,8 @@
-import TokenService from "./token-service";
-import config from "../../config";
+import TokenService from './token-service';
+import config from '../../config';
 
 const CommentService = {
   postComment(comment) {
-    console.log('comment', comment)
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
       headers: {
@@ -16,6 +15,20 @@ const CommentService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json())
+  },
+  getLatestComment() {
+    return fetch(`${config.API_ENDPOINT}/latest-comment`, {
+      headers: {
+
+      },
+      method: 'GET',
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        return res.json();
+      });
   },
 }
 

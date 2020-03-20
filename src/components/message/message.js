@@ -27,10 +27,8 @@ class Message extends Component {
 
   componentDidMount() {
     this.setState({ error: null })
-    console.log('this.props', this.props)
     MessageService.getMessage(this.props.match.params.messageId)
       .then(data => {
-        console.log('data', data)
         const formatComments = data.comments.map(com => (
           {
             id: com.id,
@@ -39,7 +37,6 @@ class Message extends Component {
             author: com.author.full_name
           }
         ))
-        console.log('formatComments', formatComments)
         this.setState({
           message: {
             id: data.message.id,
@@ -60,8 +57,6 @@ class Message extends Component {
   }
 
   handleClick = () => {
-    // e.preventdefault()
-    console.log('this.state.addFormOpen', this.state.addFormOpen)
     this.setState({
       addFormOpen: (!this.state.addFormOpen)
     })
@@ -91,7 +86,7 @@ class Message extends Component {
     if (this.state.addFormOpen) {
       addForm = <AddComment message_id={this.props.match.params.messageId} />
     } else {
-      addForm = <button className='addComment' onClick={this.toggleCommentForm}>Add Comment</button>
+      addForm = <button className='addComment bttn' onClick={this.toggleCommentForm}>Add Comment</button>
     }
     const contextValue = {
       message: this.state.message,
@@ -100,10 +95,9 @@ class Message extends Component {
       addComment: this.addComment,
       toggleCommentForm: this.toggleCommentForm,
     }
-    console.log('this.state.message.posted_date', this.state.message.posted_date)
     return (
       <MessageContext.Provider value={contextValue}>
-        <div className='Message_container'>
+        <div className='Message_container background_section'>
           <span className='error'>
             {error
               ? <p className='red'>{error}</p>
@@ -116,12 +110,8 @@ class Message extends Component {
           <div className='Message_date'>
             <NiceDate date={this.state.message.posted_date} />
           </div>
-          {/* <div>
-          {Board.messages[this.props.match.params.messageId - 1]}
-        </div> */}
           {addForm}
-          {/* <button className='addComment' onClick={this.handleClick}>Add Comment</button> */}
-          <div>
+          <div className='display_comments'>
             {messageComments.map((comment, index) =>
               <Comment key={index} comment={comment} />)}
           </div>
@@ -130,7 +120,5 @@ class Message extends Component {
     )
   }
 }
-
-
 
 export default Message

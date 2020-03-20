@@ -1,19 +1,17 @@
 .MessagePreview_container {
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
   border-radius: 5px;
   background-color: #ffffff;
   padding: 5px;
   position: relative;
+  margin: 10px auto;
+  max-width: 1024px;  
 }
 
 .MessagePreview_container a {
   text-decoration: none;
   color: #333
 }
-
-/* .latest-message a{
-  border: 1px solid #333;
-} */
 
 .MessagePreview_title {
   font-size: 16px;
@@ -25,15 +23,31 @@
   text-align: right;
 }
 
-.comment_icon {
-  /* display: inline; */
+.comment_icon {  
   position: absolute;
   width: 25px;
   height: 25px;
   line-height: 25px;
   vertical-align: middle;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  background: rgb(1,64,43);
+  background: linear-gradient(0deg,
+   rgba(1,64,43,1) 0%,
+   rgba(2,113,77,1) 25%,
+   rgba(1,162,99,1) 100%);
+  color: rgb(223, 221, 221);
   border-radius: 50%;
   top: 5px;
   right: 5px;  
+}
+
+.raised {
+    -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.raised:hover {
+    -webkit-box-shadow: 0 7px 5px -5px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 7px 5px -5px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 7px 5px -5px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }

@@ -15,7 +15,6 @@ class AddMessage extends Component {
   static contextType = MessageContext
 
   handleChange = (event) => {
-    // console.log('event.target.value', event)
     this.setState({ content: event.target.value })
   }
 
@@ -25,31 +24,27 @@ class AddMessage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log('e', e.target.messageTitle.value)
     const newMessage = {
       title: this.state.title,
       content: this.state.content
     }
     MessageService.postMessage(newMessage)
       .then(res => {
-        console.log('res', res)
         this.setState({
           content: '',
           title: ''
         })
-        // this.context.toggleMessageForm()
         this.context.addMessage(res)
         return res
       })
       .then((res) => {
-        // console.log('e', e)
         this.props.history.push(`/message-board/${res.id}`)
       })
   }
 
   render() {
     return (
-      <div className="AddMessage">
+      <div className='AddMessage background_section'>
         <h2>Add a Message</h2>
         {/* <ValidationError message={this.validateName()} /> */}
         <form className='AddMessage_form' onSubmit={this.handleSubmit}>
@@ -59,12 +54,11 @@ class AddMessage extends Component {
           </div>
           <div className='form-group'>
             <label htmlFor='messageContent'>New message content: </label>
-            {/* <textarea name='messageContent' id='messageContent' rows='6' cols='45' required onChange={e => this.updateValue(e.target.value)}></textarea>             */}
             <textarea name='messageContent' value={this.state.message} onChange={this.handleChange} id='messageContent' rows='6' cols='45' required></textarea>
           </div>
           <button
             type='submit'
-            className='AddMessage_form__submit'
+            className='AddMessage_form__submit bttn'
           >
             Submit
           </button>

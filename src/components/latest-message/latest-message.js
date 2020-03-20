@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import Comment from "../comment/comment";
-import MessageService from "../services/message-service";
-import MessagePreview from "../messagePreview/messagePreview";
+import React, { Component } from 'react';
+import Comment from '../comment/comment';
+import MessagePreview from '../messagePreview/messagePreview';
+import MessageService from '../services/message-service';
+import TokenService from '../services/token-service'
+import './latest-message.css'
 
 class LatestMessage extends Component {
   constructor(props) {
@@ -10,12 +12,12 @@ class LatestMessage extends Component {
       message: {
         id: 1,
         author: {
-          full_name: ""
+          full_name: ''
         },
-        posted_date: "2020-02-07T16:48:00.000Z"
+        posted_date: '2020-02-07T16:48:00.000Z'
       },
       comment: {
-        posted_date: "2020-02-07T16:48:00.000Z"
+        posted_date: '2020-02-07T16:48:00.000Z'
       },
       error: null
     };
@@ -24,48 +26,46 @@ class LatestMessage extends Component {
   componentDidMount() {
     MessageService.getLatestMessage()
       .then(data => {
-        console.log('latestMessage', data)
         //if no comments exist then set state to null for comments
         const newComment = (!data.comment)
           ? null
-          : {
-            id: data.comment.id,
-            content: data.comment.content,
-            posted_date: data.comment.posted_date,
-            author: data.comment.author.full_name
-          }
-        console.log('newComment', newComment)
+          : { ...data.comment, author: data.comment.author.full_name }
+
         this.setState({
           message: data.message,
-          // comment: {
-          //   id: data.comment.id,
-          //   content: data.comment.content,
-          //   posted_date: data.comment.posted_date,
-          //   author: data.comment.author.full_name
-          // }
           comment: newComment
         });
       })
+      .then(() => {
+        document.getElementById('MessagePreview').classList.remove('raised')
+      })
       .catch(err => {
         this.setState({
-          error: "Sorry, could not get the messages at this time"
+          error: 'Sorry, could not get the messages at this time'
         });
       });
+
   }
 
   render() {
+    // const latestComment = (!this.state.comment)
+    //   ? <div className='noComment_container'>
+    //     This message has no comments at this time
+    //   </div>
+    //   : <Comment comment={this.state.comment} />
     const latestComment = (!this.state.comment)
-      ? <div className="noComment_container">
+      ? <div className='noComment_container'>
         This message has no comments at this time
       </div>
-      : <Comment comment={this.state.comment} />
+      : TokenService.hasAuthToken()
+        ? <Comment comment={this.state.comment} />
+        : <div className='noComment_container'>
+          You must login to view comments
+      </div>
 
-    console.log("this.state.comment", this.state.comment);
-    console.log('latestComment', latestComment)
     return (
-      <div className="latest-message">
+      <div className='latest-message raised'>
         <MessagePreview message={this.state.message} />
-        {/* <Comment comment={this.state.comment} /> */}
         {latestComment}
       </div>
     );
