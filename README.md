@@ -4,7 +4,7 @@ Bench Boss is a hockey team management app that makes it easy for users to view 
 
 https://benchboss.now.sh/
 
-![bench boss screen capture](https://github.com/bmckenna1982/benchboss/raw/master/images/homePage.PNG "Bench Boss Home Page" | 550x325)
+![bench boss screen capture](https://github.com/bmckenna1982/benchboss/raw/master/images/homePage.PNG "Bench Boss Home Page")
 
 ##
 
