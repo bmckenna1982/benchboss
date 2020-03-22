@@ -17,6 +17,10 @@ Bench Boss allows anyone to quickly view upcoming games and the most recent mess
 
 ![bench boss game details](https://github.com/bmckenna1982/benchboss/raw/master/images/gameDetails.PNG "Bench Boss Game Details")
 
+![bench boss message board](https://github.com/bmckenna1982/benchboss/raw/master/images/messageBoard.PNG "Bench Boss Message Board")
+
+![bench boss message](https://github.com/bmckenna1982/benchboss/raw/master/images/message.PNG "Bench Boss Message")
+
 
 
 ## API Server
