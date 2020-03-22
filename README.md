@@ -11,11 +11,20 @@ Bench Boss allows anyone to quickly view upcoming games and the most recent mess
 
 ## Screen Shots
 
+### Home page
 ![bench boss home page](https://github.com/bmckenna1982/benchboss/raw/master/images/homePage.PNG "Bench Boss Home Page")
 
+### Schedule
 ![bench boss schedule](https://github.com/bmckenna1982/benchboss/raw/master/images/schedule.PNG "Bench Boss Schedule")
 
+### Game details
 ![bench boss game details](https://github.com/bmckenna1982/benchboss/raw/master/images/gameDetails.PNG "Bench Boss Game Details")
+
+### Message Board
+![bench boss message board](https://github.com/bmckenna1982/benchboss/raw/master/images/messageBoard.PNG "Bench Boss Message Board")
+
+### Message
+![bench boss message](https://github.com/bmckenna1982/benchboss/raw/master/images/message.PNG "Bench Boss Message")
 
 
 
