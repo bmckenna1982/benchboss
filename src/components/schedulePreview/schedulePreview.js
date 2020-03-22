@@ -3,12 +3,14 @@ import GamePreview from '../gamePreview/gamePreview';
 import ScheduleService from '../services/schedule-service';
 import endOfYesterday from 'date-fns/endOfYesterday'
 import './schedulePreview.css';
+import Loading from '../loading/loading';
 
 class SchedulePreview extends Component {
 
   state = {
     schedule: [],
-    error: null
+    error: null,
+    isLoading: true
   };
 
 
@@ -16,12 +18,14 @@ class SchedulePreview extends Component {
     ScheduleService.getSchedule()
       .then(data => {
         this.setState({
-          schedule: [...data]
+          schedule: [...data],
+          isLoading: false
         });
       })
       .catch(err => {
         this.setState({
-          error: 'Sorry, could not get the schedule at this time'
+          error: 'Sorry, could not get the schedule at this time',
+          isLoading: false
         });
       });
   }
@@ -33,15 +37,31 @@ class SchedulePreview extends Component {
       let date = new Date(g.time).getTime()
       return (date >= start)
     })
+
+    // return (
+    //   <ul className='SchedulePreview'>
+    //     {future.slice(0, 3).map((game, index) => (
+    //       <li key={game.id}>
+    //         <GamePreview game={game} />
+    //       </li>
+    //     ))}
+    //   </ul>
+    // );
     return (
-      <ul className='SchedulePreview'>
-        {future.slice(0, 3).map((game, index) => (
-          <li key={game.id}>
-            <GamePreview game={game} />
-          </li>
-        ))}
-      </ul>
-    );
+      <div>
+        {!this.state.isLoading
+          ? (<ul className='SchedulePreview'>
+            {future.slice(0, 3).map((game, index) => (
+              <li key={game.id}>
+                <GamePreview game={game} />
+              </li>
+            ))}
+          </ul>)
+          : (
+            <Loading />
+          )}
+      </div>
+    )
   }
 }
 
