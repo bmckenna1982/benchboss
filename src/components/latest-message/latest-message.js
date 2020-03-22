@@ -48,11 +48,6 @@ class LatestMessage extends Component {
   }
 
   render() {
-    // const latestComment = (!this.state.comment)
-    //   ? <div className='noComment_container'>
-    //     This message has no comments at this time
-    //   </div>
-    //   : <Comment comment={this.state.comment} />
     const latestComment = (!this.state.comment)
       ? <div className='noComment_container'>
         This message has no comments at this time

@@ -3,11 +3,6 @@
   flex-direction: column;  
 }
 
-/* .RSVP div {
-  flex: 1;
-  border: 1px solid #333;
-} */
-
 .GameDetail_Date {
   display: flex;
   justify-content: center;  

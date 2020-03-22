@@ -4,10 +4,13 @@ import './loading.css'
 class Loading extends Component {
   render() {
     return (
-      <div class='puck'>
-        <div class='bottom'></div>
-        <div class='middle'></div>
-        <div class='top'></div>
+      <div class='Loading'>
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     )
   }

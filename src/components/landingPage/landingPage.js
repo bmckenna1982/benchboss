@@ -4,10 +4,6 @@ import './landingPage.css'
 
 class LandingPage extends Component {
 
-  handleClick() {
-
-  }
-
   render() {
     return (
       <div className='LandingPage'>
@@ -19,7 +15,6 @@ class LandingPage extends Component {
           <Link to='/log-in' >
             <button className='login_button'> Log in</button>
           </Link>
-          {/* <button className='demo_button' onClick={this.handleClick}> Demo</button> */}
         </div>
       </div>
     )

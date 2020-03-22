@@ -5,7 +5,6 @@ const ScheduleService = {
   getSchedule() {
     return fetch(`${config.API_ENDPOINT}/schedule`, {
       headers: {
-        // Authorization: `Bearer ${config.API_KEY}`        
       },
       method: 'GET',
     })

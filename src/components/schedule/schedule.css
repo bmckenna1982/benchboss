@@ -11,6 +11,3 @@
 .chevrons_right:hover, .chevrons_left:hover {
 cursor: pointer;
 }
-/* .chevrons_right:before {
-  content: "\f105"
-} */

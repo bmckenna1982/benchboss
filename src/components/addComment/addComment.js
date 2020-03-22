@@ -33,7 +33,7 @@ class AddComment extends Component {
 
   render() {
     return (
-      <div className="AddComment">
+      <div className='AddComment'>
         <h2>Add a Comment</h2>
         {/* <ValidationError message={this.validateName()} /> */}
         <form className='AddComment_form' onSubmit={this.handleSubmit}>

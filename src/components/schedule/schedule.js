@@ -36,7 +36,6 @@ class Schedule extends Component {
         <h2>Schedule</h2>
         {addToSchedule}
         <div className='Schedule_list'>
-          {/* {this.filterGames('January')} */}
           {this.state.schedule.map((game, index) => (
             <GamePreview key={index} game={game} />
           ))}

@@ -65,9 +65,6 @@ class RSVP extends Component {
 
     return (
       <div className='RSVP'>
-        {/* <form onSubmit={this.handleSubmit}> */}
-        {/* <fieldset> */}
-        {/* <legend>{rsvpLegend}</legend> */}
         <h2>{rsvpLegend}</h2>
         <div className='RSVP_container'>
           <div className='RSVP_selection_container'>
@@ -105,8 +102,6 @@ class RSVP extends Component {
           </div>
         </div>
 
-        {/*  </fieldset>
-       </form> */}
         <div className='RSVP_status'>
           <div className='RSVP_status_in'>
             <h4>Replied In</h4>

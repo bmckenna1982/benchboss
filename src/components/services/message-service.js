@@ -58,7 +58,6 @@ const MessageService = {
   getLatestMessage() {
     return fetch(`${config.API_ENDPOINT}/latest-message`, {
       headers: {
-        // Authorization: `Bearer ${TokenService.getAuthToken()}`
       },
       method: 'GET'
     })
@@ -84,7 +83,6 @@ const MessageService = {
             `${config.API_ENDPOINT}/message-board/${data.id}/latest-comment`,
             {
               headers: {
-                // Authorization: `Bearer ${config.API_KEY}`
               },
               method: 'GET'
             }
@@ -113,7 +111,6 @@ const MessageService = {
       `${config.API_ENDPOINT}/message-board/${messageId}/latest-comment`,
       {
         headers: {
-          // Authorization: `Bearer ${config.API_KEY}`
         },
         method: 'GET'
       }

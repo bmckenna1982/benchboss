@@ -79,10 +79,6 @@ class GameDetail extends Component {
 
     const selectedGame = this.state.game;
 
-    // const currentUserRsvp = this.state.userRsvp
-    //   ? this.state.userRsvp
-    //   : 'pending';
-
     return (
       <ScheduleContext.Provider value={contextValue}>
         <section className='GameDetail background_section'>

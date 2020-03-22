@@ -49,19 +49,12 @@ class MessageBoard extends Component {
       toggleMessageForm: () => { },
       addMessage: () => { }
     }
-    // let addForm
 
-    // if (this.state.addFormOpen) {
-    //   addForm = <AddMessage message_id={this.props.match.params.messageId} />
-    // } else {
-    //   addForm = <button className='addMessage' onClick={this.toggleMessageForm}>Add Message</button>
-    // }
     const messageArray = this.state.messages
     return (
       <MessageContext.Provider value={contextValue}>
         <section className='MessageBoard background_section'>
           <h2>Message Board</h2>
-          {/* {addForm} */}
           <Link to='/add-message'>
             <button className='addMessage bttn'>Add Message</button>
           </Link>

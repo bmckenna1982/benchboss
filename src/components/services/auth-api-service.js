@@ -15,12 +15,6 @@ const AuthApiService = {
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
       )
       .then(res => {
-        /*
-          whenever a login is performed:
-          1. save the token in local storage
-          2. queue auto logout when the user goes idle
-          3. queue a call to the refresh endpoint based on the JWT's exp value
-        */
         TokenService.saveAuthToken(res.authToken)
         IdleService.registerIdleTimerResets()
 
