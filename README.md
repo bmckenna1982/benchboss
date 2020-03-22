@@ -23,6 +23,7 @@ Bench Boss allows anyone to quickly view upcoming games and the most recent mess
 ### Message Board
 ![bench boss message board](https://github.com/bmckenna1982/benchboss/raw/master/images/messageBoard.PNG "Bench Boss Message Board")
 
+### Message
 ![bench boss message](https://github.com/bmckenna1982/benchboss/raw/master/images/message.PNG "Bench Boss Message")
 
 
