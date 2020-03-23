@@ -38,15 +38,6 @@ class SchedulePreview extends Component {
       return (date >= start)
     })
 
-    // return (
-    //   <ul className='SchedulePreview'>
-    //     {future.slice(0, 3).map((game, index) => (
-    //       <li key={game.id}>
-    //         <GamePreview game={game} />
-    //       </li>
-    //     ))}
-    //   </ul>
-    // );
     return (
       <div>
         {!this.state.isLoading

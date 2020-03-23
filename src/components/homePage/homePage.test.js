@@ -15,7 +15,7 @@ it('renders without crashing', () => {
 })
 
 it('renders the UI as expected', () => {
-  const ul = shallow(<HomePage />)
-    .find('ul')
-  expect(toJson(ul)).toMatchSnapshot()
+  const ui = shallow(<HomePage />)
+    .find('ui')
+  expect(toJson(ui)).toMatchSnapshot()
 });
