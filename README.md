@@ -1,6 +1,6 @@
 # Bench Boss
 
-Bench Boss is a hockey team management app that makes it easy for users to view the schedule, add their RSVP for games and cummunicate with team members. 
+Bench Boss is a hockey team management app that makes it easy for users to view the schedule, add their RSVP for games and communicate with team members. 
 
 ## Live Site
 [Bench Boss](https://benchboss.now.sh/)
